@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b380564-a5d6-49c8-9a71-b14a0fd3f46a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/knuProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/knuProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,23 +24,11 @@
   <component name="ProjectId" id="1eADweQhk7fL9JcIg5r79IeDKWy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -104,6 +93,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="367" y="125" key="CommitChangelistDialog2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756651162" />
+    <state x="359" y="78" key="SettingsEditor" timestamp="1593758234916">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="359" y="78" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758234916" />
     <state x="310" y="262" key="Vcs.Push.Dialog.v2" timestamp="1593756666523">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
