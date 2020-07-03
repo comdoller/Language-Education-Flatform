@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b380564-a5d6-49c8-9a71-b14a0fd3f46a" name="Default Changelist" comment="test commit&#10;&#10;comdoller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gitTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="ProjectId" id="1eADweQhk7fL9JcIg5r79IeDKWy" />
   <component name="ProjectViewState">
@@ -108,7 +107,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593758263179</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test commit&#10;&#10;comdoller">
+      <created>1593761891614</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1593761891614</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test commit&#10;&#10;comdoller">
+      <created>1593762009243</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1593762009243</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -207,10 +220,10 @@
     </state>
     <state x="255" y="16" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593761765500" />
     <state x="359" y="78" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758379890" />
-    <state x="166" y="183" key="Vcs.Push.Dialog.v2" timestamp="1593761688923">
+    <state x="166" y="183" key="Vcs.Push.Dialog.v2" timestamp="1593762014737">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="166" y="183" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593761688923" />
+    <state x="166" y="183" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593762014737" />
     <state x="233" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758275706" />
     <state x="310" y="262" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756666523" />
     <state x="444" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593757620498">
