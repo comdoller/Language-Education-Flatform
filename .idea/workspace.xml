@@ -67,13 +67,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="367" y="125" key="CommitChangelistDialog2" timestamp="1593756370228">
+    <state x="382" y="332" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593756510725">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="367" y="125" key="CommitChangelistDialog2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756370228" />
-    <state x="310" y="262" key="Vcs.Push.Dialog.v2" timestamp="1593756380838">
+    <state x="382" y="332" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756510725" />
+    <state x="367" y="125" key="CommitChangelistDialog2" timestamp="1593756431383">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="310" y="262" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756380838" />
+    <state x="367" y="125" key="CommitChangelistDialog2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756431383" />
+    <state x="310" y="262" key="Vcs.Push.Dialog.v2" timestamp="1593756439398">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="310" y="262" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756439398" />
   </component>
 </project>
