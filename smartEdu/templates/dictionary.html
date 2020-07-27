@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>dictionary</h2>
+    {% if dictionaryAll %}
+            <table class="table" style="text-align : center;">
+                <thread>
+                    <tr style="border-bottom: 2px solid #1bb1dc;">
+                        <td>no</td>
+                        <td>테툼어</td>
+                        <td>영어</td>
+                        <td>바하사</td>
+                        <td>한국어</td>
+                        <td>일어</td>
+                    </tr>
+                </thread>
+
+                {% for s in dictionaryAll %}
+
+                <tr onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#ffffff'">
+                    <td>{{s.dNO}}</td>
+                    <td>{{s.dTetum}}</td>
+                    <td>{{s.dEnglish}}</td>
+                    <td>{{s.dBahasa}}</td>
+                    <td>{{s.dKorea}}</td>
+                    <td>{{s.dJapan}}</td>
+                </tr>
+
+                {% endfor %}
+            </table>
+
+            {% else %}
+            <p>no POST</p>
+            {% endif %}
+</body>
+</html>
+<!--
+
+-->
+
+
+<!--
+        {% if dictionaryAll %}
+                {% for s in dictionaryAll %}
+                    {{s.dNo}}
+                    {{s.dTetum}}
+                    {{s.dKorea}}
+                    {{s.dJapan}}
+                    {{s.dBahasa}}
+                    <br>
+                    <br>
+                {% endfor %}
+
+        {% else %}
+                <p>no POST</p>
+        {% endif %}
+-->

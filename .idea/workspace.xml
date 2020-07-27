@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="46cd6657-159b-483f-984d-968e52d001f3" name="Default Changelist" comment="">
+    <list default="true" id="46cd6657-159b-483f-984d-968e52d001f3" name="Default Changelist" comment="Test commit.">
+      <change afterPath="$PROJECT_DIR$/smartEdu/templates/dictionary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smartEdu/templates/ebook.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smartEdu/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/knuProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/knuProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/dictionary/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/dictionary/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/dictionary/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/dictionary/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/dictionary/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/dictionary/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/dictionary/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/dictionary/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/eBook/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/eBook/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/eBook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/eBook/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/smartEdu/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/smartEdu/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartEdu/smartEdu/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/smartEdu/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +45,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -27,28 +60,28 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\tmp\knuProject\smartEdu" />
+      <recent name="F:\tmp\knuProject\smartEdu\home" />
+      <recent name="F:\tmp\knuProject\smartEdu\templates" />
+      <recent name="F:\tmp\knuProject\smartEdu\smartEdu" />
+      <recent name="F:\tmp\knuProject\smartEdu\home\templates\home" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7b380564-a5d6-49c8-9a71-b14a0fd3f46a" name="Default Changelist" comment="" />
+      <changelist id="46cd6657-159b-483f-984d-968e52d001f3" name="Default Changelist" comment="" />
       <created>1593755743304</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -103,45 +136,79 @@
       <option name="project" value="LOCAL" />
       <updated>1593883333175</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Setup app&#10;&#10;home, dictionary, eBook">
+      <created>1593883972412</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1593883972412</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Test commit.">
+      <created>1594059172735</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1594059172735</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="test commit&#10;&#10;comdoller" />
     <MESSAGE value="Setup app&#10;&#10;home, dictionary, eBook" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup app&#10;&#10;home, dictionary, eBook" />
+    <MESSAGE value="Test commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test commit." />
   </component>
   <component name="WindowStateProjectService">
     <state x="382" y="332" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593756510725">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="382" y="332" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756510725" />
-    <state x="505" y="144" width="920" height="809" key="CommitChangelistDialog2" timestamp="1593883923481">
+    <state x="505" y="144" width="920" height="809" key="CommitChangelistDialog2" timestamp="1593883970494">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="275" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758262562" />
-    <state x="505" y="144" width="920" height="809" key="CommitChangelistDialog2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593883923481" />
+    <state x="505" y="144" width="920" height="809" key="CommitChangelistDialog2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593883970494" />
     <state x="295" y="134" key="DiffContextDialog" timestamp="1593883919918">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="295" y="134" key="DiffContextDialog/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593883919918" />
-    <state x="359" y="78" key="SettingsEditor" timestamp="1593758379890">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="359" y="78" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758379890" />
-    <state x="310" y="262" key="Vcs.Push.Dialog.v2" timestamp="1593883344627">
+    <state x="286" y="201" key="FileChooserDialogImpl" timestamp="1595769608401">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state x="286" y="201" key="FileChooserDialogImpl/-1050.-319.1050.1640/0.0.2560.1040@0.0.2560.1040" timestamp="1595769608401" />
+    <state x="246" y="146" key="SettingsEditor" timestamp="1595775069116">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="246" y="146" key="SettingsEditor/-1050.-319.1050.1640/0.0.2560.1040@0.0.2560.1040" timestamp="1595775069116" />
+    <state x="359" y="78" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758379890" />
+    <state x="310" y="262" key="Vcs.Push.Dialog.v2" timestamp="1594059179049">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="310" y="262" key="Vcs.Push.Dialog.v2/-1050.-319.1050.1640/0.0.2560.1040@0.0.2560.1040" timestamp="1594059179049" />
     <state x="233" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758275706" />
-    <state x="310" y="262" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593883344627" />
+    <state x="310" y="262" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593883981043" />
     <state x="1216" y="296" width="588" height="531" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1593883887253">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1216" y="296" width="588" height="531" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593883887253" />
-    <state x="444" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593757620498">
+    <state x="444" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594058407789">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state x="444" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1050.-319.1050.1640/0.0.2560.1040@0.0.2560.1040" timestamp="1594058407789" />
     <state x="444" y="441" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593757620498" />
   </component>
 </project>
