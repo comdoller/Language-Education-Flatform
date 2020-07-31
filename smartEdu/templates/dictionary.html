@@ -6,6 +6,12 @@
 </head>
 <body>
     <h2>dictionary</h2>
+
+    <form action="{% url 'dictionary:search' %}" method="get">
+                    <input type="text" name="q" value="{{ q }}">
+                    <input type="submit" value="검색">
+                </form>
+
     {% if dictionaryAll %}
             <table class="table" style="text-align : center;">
                 <thread>
@@ -34,14 +40,45 @@
             </table>
 
             {% else %}
-            <p>no POST</p>
+          <!--  <p> </p> -->
+            {% endif %}
+
+
+
+    <!-- 단어검색 -->
+            {% if search_result %}
+
+           <table class="table" style="text-align : center;">
+                <thread>
+                    <tr style="border-bottom: 2px solid #1bb1dc;">
+                        <td>no</td>
+                        <td>테툼어</td>
+                        <td>영어</td>
+                        <td>바하사</td>
+                        <td>한국어</td>
+                        <td>일어</td>
+                    </tr>
+                </thread>
+
+                {% for s in search_result %}
+
+                  <tr onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#ffffff'">
+                    <td>{{s.dNO}}</td>
+                    <td>{{s.dTetum}}</td>
+                    <td>{{s.dEnglish}}</td>
+                    <td>{{s.dBahasa}}</td>
+                    <td>{{s.dKorea}}</td>
+                    <td>{{s.dJapan}}</td>
+                </tr>
+
+                {% endfor %}
+            </table>
+
+            {% else %}
+            <p>'{{ q }}' not found </p>
             {% endif %}
 </body>
 </html>
-<!--
-
--->
-
 
 <!--
         {% if dictionaryAll %}
