@@ -9,8 +9,10 @@ from django.http import HttpResponse
 def showDictionary(request):
 
     qs = Dictionary.objects.all()
-    context = {'dictionaryAll': qs}
-    return render(request, "dictionary.html", context)
+    page = int(request.GET.get('p', 1))
+    paginator = Paginator(qs, 20)
+    context = paginator.get_page(page)
+    return render(request, "dictionary.html", {"dictionaryAll": context})
 
 def search(request):
     qs = Dictionary.objects.all()
