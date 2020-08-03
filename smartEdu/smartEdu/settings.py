@@ -80,9 +80,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'edudb',
         'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'knucom2020',
+        'HOST': 'edudb.cavluxc81vib.ap-northeast-2.rds.amazonaws.com',
         'ROOT': '3306',
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"'
+        }
     }
 }
 
