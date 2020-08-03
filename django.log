@@ -1,0 +1,188 @@
+*** Starting uWSGI 2.0.19.1 (64bit) on [Mon Aug  3 16:01:29 2020] ***
+compiled with version: 7.5.0 on 03 August 2020 14:49:20
+os: Linux-5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020
+nodename: ip-172-31-41-127
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/knuProject
+writing pidfile to /tmp/project-master.pid
+detected binary path: /home/ubuntu/knuProject/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ubuntu/knuProject
+your processes number limit is 3739
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ubuntu/knuProject/uwsgi.sock fd 3
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/knuProject/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55c85edbc0b0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+ModuleNotFoundError: No module named 'smartEdu.wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22151)
+spawned uWSGI worker 1 (pid: 22152, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/1] 1.244.171.20 () {42 vars in 759 bytes} [Mon Aug  3 16:01:36 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/2] 1.244.171.20 () {44 vars in 721 bytes} [Mon Aug  3 16:01:36 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/3] 1.244.171.20 () {42 vars in 759 bytes} [Mon Aug  3 16:01:37 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/4] 1.244.171.20 () {44 vars in 721 bytes} [Mon Aug  3 16:01:37 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/5] 1.244.171.20 () {42 vars in 759 bytes} [Mon Aug  3 16:01:37 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/6] 1.244.171.20 () {44 vars in 721 bytes} [Mon Aug  3 16:01:37 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/7] 1.244.171.20 () {42 vars in 759 bytes} [Mon Aug  3 16:01:37 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/8] 1.244.171.20 () {44 vars in 721 bytes} [Mon Aug  3 16:01:37 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/9] 1.244.171.20 () {42 vars in 759 bytes} [Mon Aug  3 16:01:38 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/10] 1.244.171.20 () {44 vars in 721 bytes} [Mon Aug  3 16:01:38 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/11] 1.244.171.20 () {42 vars in 759 bytes} [Mon Aug  3 16:01:38 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/12] 1.244.171.20 () {44 vars in 721 bytes} [Mon Aug  3 16:01:38 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/13] 1.244.171.20 () {42 vars in 759 bytes} [Mon Aug  3 16:01:38 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 22152|app: -1|req: -1/14] 1.244.171.20 () {44 vars in 721 bytes} [Mon Aug  3 16:01:38 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.19.1 (64bit) on [Mon Aug  3 16:02:07 2020] ***
+compiled with version: 7.5.0 on 03 August 2020 14:49:20
+os: Linux-5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020
+nodename: ip-172-31-41-127
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/knuProject
+writing pidfile to /tmp/project-master.pid
+detected binary path: /home/ubuntu/knuProject/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ubuntu/knuProject
+your processes number limit is 3739
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ubuntu/knuProject/uwsgi.sock fd 3
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/knuProject/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55b6abf820b0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+ModuleNotFoundError: No module named 'smartEdu.wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22184)
+spawned uWSGI worker 1 (pid: 22185, cores: 1)
+*** Starting uWSGI 2.0.19.1 (64bit) on [Mon Aug  3 16:02:13 2020] ***
+compiled with version: 7.5.0 on 03 August 2020 14:49:20
+os: Linux-5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020
+nodename: ip-172-31-41-127
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/knuProject
+writing pidfile to /tmp/project-master.pid
+detected binary path: /home/ubuntu/knuProject/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ubuntu/knuProject
+your processes number limit is 3739
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ubuntu/knuProject/uwsgi.sock fd 3
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/knuProject/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x55673493c0b0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+ModuleNotFoundError: No module named 'smartEdu.wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22188)
+spawned uWSGI worker 1 (pid: 22189, cores: 1)
+*** Starting uWSGI 2.0.19.1 (64bit) on [Mon Aug  3 16:03:21 2020] ***
+compiled with version: 7.5.0 on 03 August 2020 14:49:20
+os: Linux-5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020
+nodename: ip-172-31-41-127
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/knuProject
+writing pidfile to /tmp/project-master.pid
+detected binary path: /home/ubuntu/knuProject/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/ubuntu/knuProject/smartEdu
+your processes number limit is 3739
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/ubuntu/knuProject/uwsgi.sock fd 3
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/knuProject/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x564e8e9590b0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x564e8e9590b0 pid: 22194 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22194)
+spawned uWSGI worker 1 (pid: 22196, cores: 1)
+[pid: 22196|app: 0|req: 1/1] 1.244.171.20 () {42 vars in 759 bytes} [Tue Aug  4 01:03:26 2020] GET / => generated 253 bytes in 48 msecs (HTTP/1.1 200) 4 headers in 136 bytes (2 switches on core 0)
+Not Found: /favicon.ico
+[pid: 22196|app: 0|req: 2/2] 1.244.171.20 () {44 vars in 721 bytes} [Tue Aug  4 01:03:26 2020] GET /favicon.ico => generated 2351 bytes in 4 msecs (HTTP/1.1 404) 4 headers in 129 bytes (1 switches on core 0)
+./dictionary/views.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'dictionary.models.Dictionary'> QuerySet.
+  paginator = Paginator(qs, 20)
+[pid: 22196|app: 0|req: 3/3] 1.244.171.20 () {42 vars in 788 bytes} [Tue Aug  4 01:03:30 2020] GET /dictionary/ => generated 10466 bytes in 95 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 4/4] 223.39.131.50 () {40 vars in 654 bytes} [Tue Aug  4 01:03:36 2020] GET / => generated 253 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 5/5] 1.244.171.20 () {42 vars in 752 bytes} [Tue Aug  4 01:03:55 2020] GET / => generated 253 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 6/6] 121.53.242.2 () {46 vars in 648 bytes} [Tue Aug  4 01:03:59 2020] GET / => generated 253 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 7/7] 223.39.131.50 () {40 vars in 642 bytes} [Tue Aug  4 01:04:23 2020] GET / => generated 253 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 8/8] 1.255.207.14 () {40 vars in 720 bytes} [Tue Aug  4 01:04:25 2020] GET / => generated 253 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 22196|app: 0|req: 9/9] 1.255.207.14 () {40 vars in 660 bytes} [Tue Aug  4 01:04:25 2020] GET /favicon.ico => generated 2351 bytes in 3 msecs (HTTP/1.1 404) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 10/10] 1.255.207.14 () {42 vars in 780 bytes} [Tue Aug  4 01:04:27 2020] GET /dictionary/ => generated 10466 bytes in 52 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 11/11] 223.39.131.50 () {42 vars in 702 bytes} [Tue Aug  4 01:04:29 2020] GET /dictionary/ => generated 10466 bytes in 44 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 12/12] 1.255.207.14 () {42 vars in 770 bytes} [Tue Aug  4 01:04:30 2020] GET /ebook/ => generated 141 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 13/13] 1.255.207.14 () {42 vars in 780 bytes} [Tue Aug  4 01:04:32 2020] GET /dictionary/ => generated 10466 bytes in 118 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 14/14] 1.255.207.14 () {42 vars in 844 bytes} [Tue Aug  4 01:04:58 2020] GET /dictionary/search?q=%EB%82%B4%EC%9D%BC => generated 1035 bytes in 98 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 15/15] 223.39.131.50 () {40 vars in 642 bytes} [Tue Aug  4 01:04:58 2020] GET / => generated 253 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 16/16] 223.39.131.50 () {42 vars in 702 bytes} [Tue Aug  4 01:05:00 2020] GET /dictionary/ => generated 10466 bytes in 44 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 17/17] 223.39.131.50 () {42 vars in 720 bytes} [Tue Aug  4 01:05:03 2020] GET /dictionary/?p=2 => generated 10243 bytes in 79 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 18/18] 159.146.31.93 () {32 vars in 444 bytes} [Tue Aug  4 01:05:34 2020] GET / => generated 253 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 19/19] 1.244.171.20 () {40 vars in 750 bytes} [Tue Aug  4 01:06:35 2020] GET /dictionary/ => generated 10466 bytes in 88 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 20/20] 1.244.171.20 () {42 vars in 778 bytes} [Tue Aug  4 01:06:57 2020] GET /ebook/ => generated 141 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 21/21] 1.244.171.20 () {42 vars in 788 bytes} [Tue Aug  4 01:06:59 2020] GET /dictionary/ => generated 10466 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 22/22] 1.244.171.20 () {42 vars in 806 bytes} [Tue Aug  4 01:07:01 2020] GET /dictionary/?p=2 => generated 10243 bytes in 44 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 23/23] 1.244.171.20 () {42 vars in 806 bytes} [Tue Aug  4 01:07:04 2020] GET /dictionary/?p=2 => generated 10243 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 24/24] 1.244.171.20 () {42 vars in 810 bytes} [Tue Aug  4 01:07:06 2020] GET /dictionary/?p=3 => generated 10402 bytes in 44 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 25/25] 1.244.204.205 () {40 vars in 721 bytes} [Tue Aug  4 01:09:25 2020] GET / => generated 253 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 136 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 22196|app: 0|req: 26/26] 1.244.204.205 () {40 vars in 661 bytes} [Tue Aug  4 01:09:25 2020] GET /favicon.ico => generated 2351 bytes in 3 msecs (HTTP/1.1 404) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 27/27] 1.244.171.20 () {42 vars in 822 bytes} [Tue Aug  4 01:09:26 2020] GET /dictionary/search?q=Aan => generated 1041 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 28/28] 1.244.171.20 () {42 vars in 834 bytes} [Tue Aug  4 01:09:32 2020] GET /dictionary/search?q=their+own => generated 1047 bytes in 59 msecs (HTTP/1.1 200) 4 headers in 137 bytes (1 switches on core 0)
+[pid: 22196|app: 0|req: 29/29] 1.244.171.20 () {42 vars in 788 bytes} [Tue Aug  4 01:13:25 2020] GET /dictionary/ => generated 10466 bytes in 50 msecs (HTTP/1.1 200) 4 headers in 138 bytes (1 switches on core 0)
