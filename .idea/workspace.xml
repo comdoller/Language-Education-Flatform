@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b380564-a5d6-49c8-9a71-b14a0fd3f46a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/1과.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/2과.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/3과.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/4과.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/5과.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/knuProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/knuProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smartEdu/templates/ebook.html" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/templates/ebook.html" afterDir="false" />
-    </list>
+    <list default="true" id="7b380564-a5d6-49c8-9a71-b14a0fd3f46a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,13 +96,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593758483640</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="KBY_TECH Temporary Code Add &amp;&amp; static file add (PDF file)  &#10;-Error: MYSQL Unknown -">
+      <created>1596607954913</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596607954913</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="test commit&#10;&#10;comdoller" />
-    <option name="LAST_COMMIT_MESSAGE" value="test commit&#10;&#10;comdoller" />
+    <MESSAGE value="KBY_TECH Temporary Code Add &amp;&amp; static file add (PDF file)  &#10;-Error: MYSQL Unknown -" />
+    <option name="LAST_COMMIT_MESSAGE" value="KBY_TECH Temporary Code Add &amp;&amp; static file add (PDF file)  &#10;-Error: MYSQL Unknown -" />
   </component>
   <component name="WindowStateProjectService">
     <state x="382" y="332" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593756510725">
