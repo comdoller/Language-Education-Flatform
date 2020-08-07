@@ -15,7 +15,7 @@
                 })
         });
         </script>
-    <div row="">
+    <div row="" align="center">
         <div col="">=
             <a data-url="{% static 'one.pdf' %}" class="btn btn-info">pdf변경하기1</a>
             <a data-url="{% static 'two.pdf' %}" class="btn btn-info">pdf변경하기2</a>
@@ -23,9 +23,11 @@
             <a data-url="{% static 'four.pdf' %}" class="btn btn-info">pdf변경하기4</a>
             <a data-url="{% static 'five.pdf' %}" class="btn btn-info">pdf변경하기5</a>
         </div>
+        <div row="" align="center">
         <iframe id="iframe" width="1024" height="500" src="{% static 'one.pdf' %}"></iframe>
+        </div>
           <!-- 크게 보기 -->
-         <div col="">=
+         <div col="" align="center">=
             <a href="{% static 'one.pdf' %}"  target="_blank" class="btn btn-info">크게보기1</a>
             <a href="{% static 'two.pdf' %}"  target="_blank" class="btn btn-info">크게보기2</a>
             <a href="{% static 'three.pdf' %}" target="_blank" class="btn btn-info">크게보기3</a>
