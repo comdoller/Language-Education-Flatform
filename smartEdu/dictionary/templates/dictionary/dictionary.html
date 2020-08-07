@@ -79,18 +79,19 @@
 {% else %}
 <!-- <p>'{{ q }}' not found </p> -->
 {% endif %}
-
-{% if dictionaryAll.has_previous %}
-    <a href="?p=1">맨앞</a>
-    <a href="?p={{dictionaryAll.previous_page_number}}">이전으로</a>
-{% endif %}
-    <span>{{dictionaryAll.number}}</span>
-    <span>/</span>
-    <span>{{dictionaryAll.paginator.num_pages}}"</span>
-{% if dictionaryAll.has_next %}
-    <a href="?p={{dictionaryAll.next_page_number}}">다음으로</a>
-    <a href="?p={{dictionaryAll.paginator.num_pages}}">맨뒤로</a>
-{% endif %}
+<div row="" align="center">
+    {% if dictionaryAll.has_previous %}
+        <a href="?p=1">맨앞</a>
+        <a href="?p={{dictionaryAll.previous_page_number}}">이전으로</a>
+    {% endif %}
+        <span>{{dictionaryAll.number}}</span>
+        <span>/</span>
+        <span>{{dictionaryAll.paginator.num_pages}}"</span>
+    {% if dictionaryAll.has_next %}
+        <a href="?p={{dictionaryAll.next_page_number}}">다음으로</a>
+        <a href="?p={{dictionaryAll.paginator.num_pages}}">맨뒤로</a>
+    {% endif %}
+</div>
 
 {% endblock %}
 
