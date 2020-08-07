@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
+{% extends 'base.html' %}
+{% load static %}
+
 <h2>dictionary</h2>
 
-<form action="{% url 'dictionary:search' %}" method="get">
-    <input type="text" name="q" value="{{ q }}">
-    <input type="submit" value="검색">
-</form>
+
+{% block content %}
+
+<div row="" align="center">
+    <form action="{% url 'dictionary:search' %}" method="get">
+        <input type="text" name="q" value="{{ q }}">
+        <input type="submit" value="검색">
+    </form>
+</div>
 
 {% if dictionaryAll %}
 <table class="table" style="text-align : center;">
@@ -79,18 +81,18 @@
 {% endif %}
 
 {% if dictionaryAll.has_previous %}
-<a href="?p=1">맨앞</a>
-<a href="?p={{dictionaryAll.previous_page_number}}">이전으로</a>
+    <a href="?p=1">맨앞</a>
+    <a href="?p={{dictionaryAll.previous_page_number}}">이전으로</a>
 {% endif %}
-<span>{{dictionaryAll.number}}</span>
-<span>/</span>
-<span>{{dictionaryAll.paginator.num_pages}}"</span>
+    <span>{{dictionaryAll.number}}</span>
+    <span>/</span>
+    <span>{{dictionaryAll.paginator.num_pages}}"</span>
 {% if dictionaryAll.has_next %}
-<a href="?p={{dictionaryAll.next_page_number}}">다음으로</a>
-<a href="?p={{dictionaryAll.paginator.num_pages}}">맨뒤로</a>
+    <a href="?p={{dictionaryAll.next_page_number}}">다음으로</a>
+    <a href="?p={{dictionaryAll.paginator.num_pages}}">맨뒤로</a>
 {% endif %}
-</body>
-</html>
+
+{% endblock %}
 
 <!--
         {% if dictionaryAll %}
