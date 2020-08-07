@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h2>eBook</h2>
 
-    <!--  임시 코드만 추가
-    mysql unknown Error
-    2020-08-05 15:10
-    -> 아직 DB에 필드 및 테이블 개설 x.
-    -->
-    <object width="100%" height="100px" data="your_url_to_pdf" type="application/pdf">
-        <embed src="{ % static '/1과.pdf' %}"  type="application/pdf" />
-    </object>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+    <h2>eBook PAGE</h2>
+
+
+{% block content %}
+<!-- Iframe 전환 완료 2020.08.07 KBY_TECH -->
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script>
+        $(document).ready(function(e) {
+            $('a').click(function(){
+                $('#iframe').attr('src',$(this).attr('data-url'));
+                })
+        });
+        </script>
+    <div row="">
+        <div col="">=
+            <a data-url="{% static 'one.pdf' %}" class="btn btn-info">pdf변경하기1</a>
+            <a data-url="{% static 'two.pdf' %}" class="btn btn-info">pdf변경하기2</a>
+            <a data-url="{% static 'three.pdf' %}" class="btn btn-info">pdf변경하기3</a>
+            <a data-url="{% static 'four.pdf' %}" class="btn btn-info">pdf변경하기4</a>
+            <a data-url="{% static 'five.pdf' %}" class="btn btn-info">pdf변경하기5</a>
+        </div>
+        <iframe id="iframe" width="1024" height="500" src="{% static 'one.pdf' %}"></iframe>
+          <!-- 크게 보기 -->
+         <div col="">=
+            <a href="{% static 'one.pdf' %}"  target="_blank" class="btn btn-info">크게보기1</a>
+            <a href="{% static 'two.pdf' %}"  target="_blank" class="btn btn-info">크게보기2</a>
+            <a href="{% static 'three.pdf' %}" target="_blank" class="btn btn-info">크게보기3</a>
+            <a href="{% static 'four.pdf' %}"  target="_blank" class="btn btn-info">크게보기4</a>
+            <a href="{% static 'five.pdf' %}"  target="_blank" class="btn btn-info">크게보기5</a>
+         </div>
+    </div>
+
+{% endblock %}
