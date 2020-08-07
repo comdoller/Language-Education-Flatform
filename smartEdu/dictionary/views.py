@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from dictionary.models import Dictionary
+from .models import Dictionary
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 
@@ -12,7 +12,7 @@ def showDictionary(request):
     page = int(request.GET.get('p', 1))
     paginator = Paginator(qs, 20)
     context = paginator.get_page(page)
-    return render(request, "dictionary.html", {"dictionaryAll": context})
+    return render(request, "dictionary/dictionary.html", {"dictionaryAll": context})
 
 def search(request):
     qs = Dictionary.objects.all()
@@ -20,7 +20,7 @@ def search(request):
     if q:
         qs = qs.filter(dTetum=q) or qs.filter(dEnglish=q) or qs.filter(dBahasa=q) or qs.filter(dKorea=q) or qs.filter(dJapan=q)
 
-        return render(request, 'dictionary.html', {
+        return render(request, 'dictionary/dictionary.html', {
             'search_result' : qs,
             'q': q,
         })

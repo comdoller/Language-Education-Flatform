@@ -4,5 +4,5 @@ from django.http import HttpResponse
 
 
 def eBook(request):
-    return render(request, 'ebook.html')
+    return render(request, 'ebook/ebook.html')
 
