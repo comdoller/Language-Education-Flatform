@@ -19,11 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b380564-a5d6-49c8-9a71-b14a0fd3f46a" name="Default Changelist" comment="test commit&#10;&#10;comdoller">
+    <list default="true" id="7b380564-a5d6-49c8-9a71-b14a0fd3f46a" name="Default Changelist" comment="downloads">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smartEdu/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/home/templates/home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smartEdu/smartEdu/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/smartEdu/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smartEdu/smartEdu/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smartEdu/smartEdu/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +128,28 @@
       <option name="project" value="LOCAL" />
       <updated>1593762009243</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="downloads">
+      <created>1597051531408</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597051531409</updated>
+    </task>
+    <task id="LOCAL-00010" summary="downloads">
+      <created>1597051646096</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1597051646096</updated>
+    </task>
+    <task id="LOCAL-00011" summary="downloads">
+      <created>1597051858590</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1597051858590</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -209,7 +227,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="test commit&#10;&#10;comdoller" />
-    <option name="LAST_COMMIT_MESSAGE" value="test commit&#10;&#10;comdoller" />
+    <MESSAGE value="downloads" />
+    <option name="LAST_COMMIT_MESSAGE" value="downloads" />
   </component>
   <component name="WindowStateProjectService">
     <state x="204" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597046385377">
@@ -235,10 +254,10 @@
     </state>
     <state x="255" y="16" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1593761765500" />
     <state x="359" y="78" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758379890" />
-    <state x="166" y="183" key="Vcs.Push.Dialog.v2" timestamp="1597051281909">
+    <state x="166" y="183" key="Vcs.Push.Dialog.v2" timestamp="1597053634358">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="166" y="183" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597051281909" />
+    <state x="166" y="183" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597053634358" />
     <state x="233" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593758275706" />
     <state x="310" y="262" key="Vcs.Push.Dialog.v2/0.0.2560.1040/-1050.-264.1050.1640@0.0.2560.1040" timestamp="1593756666523" />
     <state x="237" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597046840962">
