@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+
+
+
+    <h2>home</h2>
+    <br>
+    <br>
+    {% block content %}
+
+<!--    <a href="{% url 'dictionary:showDictionary'%}" class="btn btn-info btn-sm">단어사전</a>-->
+
+    <div class="btn-group">
+        <a href="{% url 'dictionary:showDictionary' %}" class="btn btn-info">단어사전</a>
+    </div>
+    <div class="btn-group">
+        <a href="{% url 'eBook:eBook' %}" class="btn btn-info">E-Book</a>
+    </div>
+<!--    <a href="{% url 'eBook:eBook'%}" class="btn btn-info btn-sm">E-Book</a>-->
+
+    {% endblock %}

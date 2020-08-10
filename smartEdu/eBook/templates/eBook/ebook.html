@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+    <h2>eBook PAGE</h2>
+
+
+{% block content %}
+<!-- Iframe 전환 완료 2020.08.07 KBY_TECH -->
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script>
+        $(document).ready(function(e) {
+            $('a').click(function(){
+                $('#iframe').attr('src',$(this).attr('data-url'));
+                })
+        });
+        </script>
+    <div row="">
+        <div col="">=
+            <a data-url="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch1.pdf" class="btn btn-info">pdf변경하기1</a>
+            <a data-url="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch2.pdf" class="btn btn-info">pdf변경하기2</a>
+            <a data-url="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch3.pdf" class="btn btn-info">pdf변경하기3</a>
+            <a data-url="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch4.pdf" class="btn btn-info">pdf변경하기4</a>
+            <a data-url="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch5.pdf" class="btn btn-info">pdf변경하기5</a>
+        </div>
+        <iframe id="iframe" width="1024" height="800" src="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch1.pdf"></iframe>
+          <!-- 크게 보기 -->
+         <div col="">=
+            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch1.pdf"  target="_blank" class="btn btn-info">크게보기1</a>
+            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch2.pdf"  target="_blank" class="btn btn-info">크게보기2</a>
+            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch3.pdf" target="_blank" class="btn btn-info">크게보기3</a>
+            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch4.pdf"  target="_blank" class="btn btn-info">크게보기4</a>
+            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch5.pdf"  target="_blank" class="btn btn-info">크게보기5</a>
+         </div>
+    </div>
+
+{% endblock %}
