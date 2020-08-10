@@ -6,40 +6,47 @@
 
 {% block content %}
 <!-- Iframe 전환 완료 2020.08.07 KBY_TECH -->
-        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
         $(document).ready(function(e) {
             $('a').click(function(){
                 $('#iframe').attr('src',$(this).attr('data-url'));
                 })
         });
         </script>
-    <div row="" align="center">
+<div row="" align="center">
 
-        <div col="">
-            {% if sql %}
-                {% for s in sql %}
-
-                      <a data-url="{{s.eData}}" class="btn btn-info">pdf변경하기**{{ forloop.counter }}</a>
-
-                 {% endfor %}
-
-            {% else %}
-                 <p> 데이터 삽입 부탁드립니다 !</p>
-            {% endif %}
-        </div>
-        <iframe id="iframe" width="1024" height="800" src="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch1.pdf"></iframe>
-          <!-- 크게 보기 -->
-         <div col="">
-            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch1.pdf"  target="_blank" class="btn btn-info">크게보기1</a>
-            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch2.pdf"  target="_blank" class="btn btn-info">크게보기2</a>
-            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch3.pdf" target="_blank" class="btn btn-info">크게보기3</a>
-            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch4.pdf"  target="_blank" class="btn btn-info">크게보기4</a>
-            <a href="https://knuproject.s3.ap-northeast-2.amazonaws.com/eBook/ch5.pdf"  target="_blank" class="btn btn-info">크게보기5</a>
-         </div>
-
+    <div col="">
+        {% if sql %}
+        {% for s in sql %}
+        <button type="button" class="btn btn-primary"><a data-url="{{s.eData}}" class="btn btn-info"> {{s.eName}}</a></button>
+        {% endfor %}
+        {% else %}
+        <p> 데이터 삽입 부탁드립니다 !</p>
+        {% endif %}
     </div>
-    <br><br>
+    </br>
+    </br>
+    <!-- 크게 보기 -->
+    <div col="">
+        {% if sql %}
+        {% for s in sql %}
+
+        <a href="{{s.eData}}"  target="_blank" class="btn btn-info">{{s.eName}} 크게보기</a>
+
+        {% endfor %}
+
+        {% else %}
+        {% endif %}
+
+        </br>
+        </br>
+
+        <iframe id="iframe" width="1024" height="800" src="#"></iframe>
+    </div>
+
+</div>
+<br><br>
 
 
 {% endblock %}
