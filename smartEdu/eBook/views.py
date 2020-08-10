@@ -7,5 +7,5 @@ from .models import Ebook
 
 def eBook(request):
     sql = Ebook.objects.all()
-    return render(request, "ebook/ebook.html",{'sql': sql})
+    return render(request, "eBook/ebook.html",{'sql': sql})
 
