@@ -1,22 +1,60 @@
 
+
 {% extends 'base.html' %}
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 
 
 
 
-    <h2>home</h2>
-    <br>
-    <br>
     {% block content %}
+    <div class="row">
+        <div class="col">
 
-<!--    <a href="{% url 'dictionary:showDictionary'%}" class="btn btn-info btn-sm">단어사전</a>-->
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
 
-    <div class="btn-group">
-        <a href="{% url 'dictionary:showDictionary' %}" class="btn btn-info">단어사전</a>
+                    <!-- Boxes -->
+                    <div class="thumbnails">
+
+                        <div class="box">
+                            <a class="image fit"><img src="static/images/pic01.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>EBOOK</h3>
+                                <p>ebook을 열람하실수 있습니다.</p>
+                                <a href="{% url 'eBook:eBook' %}" class="button fit" data-poptrox="youtube,800x400">ebook 열기</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a class="image fit"><img src="static/images/pic02.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>DICTIONARY</h3>
+                                <p>단어사전입니다.</p>
+                                <a href="{% url 'dictionary:showDictionary' %}" class="button style2 fit" data-poptrox="youtube,800x400">단어 검색하기</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a class="image fit"><img src="static/images/pic03.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>TEST</h3>
+                                <p>단어 테스트를 하실수 있습니다.</p>
+                                <a href="test.html" class="button style3 fit" data-poptrox="youtube,800x400">테스트보기</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="btn-group">
-        <a href="{% url 'eBook:eBook' %}" class="btn btn-info">E-Book</a>
-    </div>
-<!--    <a href="{% url 'eBook:eBook'%}" class="btn btn-info btn-sm">E-Book</a>-->
+        {% endblock %}
 
-    {% endblock %}
