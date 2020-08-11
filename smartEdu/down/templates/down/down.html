@@ -1,17 +1,45 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-
 {% block content %}
+<html>
 
-{% if sql %}
-    {% for s in sql %}
-        <ul>
-            <li><a class="btn" href="{{s.eData}}" download>ebook{{ forloop.counter }} 다운로드</a></li>
-        </ul>
-    {% endfor %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset = utf-8">
+    <script src = "multiFileDown.js"></script>
+    <script>
+        var suffix = 1;
+        function download(oFrm){
+        var oChk = oFrm.elements["pdf"+(suffix++)];
+        if(oChk){
+            if(oChk.checked){
+                location.href = oChk.value;
+                setTimeout(function(){ download(oFrm)},1000);
+             }
+             else{
+                download(oFrm);
+             }
+         }
+     }
 
-{% endif %}
+    </script>
+</head>
 
-{% endblock %}
+<body>
+    <form>
+        <fieldset>
+            {% for s in sql %}
+            <div>
+                <input type = "checkbox" name = "pdf{{ forloop.counter }}" id = "pdf{{ forloop.counter }}" value = "{{s.eData}}" />
+                <label for ="pdf{{ forloop.counter }}">pdf{{ forloop.counter }}</label>
+            </div>
+            {% endfor %}
+            <div>
+                <input type = "button" value = "Download" onclick ="suffix=1;download(this.form);return false" />
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
+{%endblock%}
