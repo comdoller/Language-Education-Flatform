@@ -1,9 +1,6 @@
 from django.db import models
 from django.urls import reverse
 
-
-# Create your models here.
-
 class Ebook(models.Model):
     eNo = models.IntegerField(db_column='eNo',db_index=True, primary_key=True)
     eName = models.CharField(db_column='eName', max_length=128)
