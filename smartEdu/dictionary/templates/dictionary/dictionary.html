@@ -1,31 +1,54 @@
 
+
+
 {% extends 'base.html' %}
 {% load static %}
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 
 
+    {% block content %}
+
+         <!-- Inline form-->
+ <div class="row">
+    <div class="col-lg-11">
+      <section class="panel">
+        <header class="panel-heading">
+          단어를 검색하실 수 있습니다.
+        </header>
+        <div class="panel-body">
+          <form class="form-inline" role="form" action="{% url 'dictionary:search' %}" method="get">
+            <div class="form-group">
+              <input type="text"  name="q" value="{{ q }}" required>
+
+            </div>
 
 
-{% block content %}
+            <button type="submit" class="btn btn-primary">검색</button>
+          </form>
 
-<div row="" align="center">
-    <form action="{% url 'dictionary:search' %}" method="get">
-        <input type="text" name="q" value="{{ q }}" required>
-        <input type="submit" value="검색">
-    </form>
-</div>
+        </div>
+      </section>
 
-{% if dictionaryAll %}
-<table class="table" style="text-align : center;">
-    <thread>
-        <tr style="border-bottom: 2px solid #1bb1dc;">
-            <td>no</td>
-            <td>테툼어</td>
-            <td>영어</td>
-            <td>바하사</td>
-            <td>한국어</td>
-            <td>일어</td>
-        </tr>
-    </thread>
+    </div>
+  </div>
+
+
+    {% if dictionaryAll %}
+        <table class="table" style="text-align : center;">
+            <thread>
+                <tr style="border-bottom: 2px solid #1bb1dc;">
+                <td>no</td>
+                <td>테툼어</td>
+                <td>영어</td>
+                <td>바하사</td>
+                <td>한국어</td>
+                <td>일어</td>
+            </tr>
+            </thread>
 
     {% for s in dictionaryAll %}
 
@@ -93,7 +116,7 @@
     {% endif %}
 </div>
 
-{% endblock %}
+
 
 <!--
         {% if dictionaryAll %}
@@ -111,3 +134,8 @@
                 <p>no POST</p>
         {% endif %}
 -->
+
+
+
+
+{% endblock %}
