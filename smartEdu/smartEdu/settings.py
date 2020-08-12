@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'home',
     'eBook',
     'dictionary',
-    'down'
+    'down',
 ]
 
 MIDDLEWARE = [
