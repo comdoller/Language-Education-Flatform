@@ -22,5 +22,4 @@ urlpatterns = [
     path('dictionary/', include('dictionary.urls')),
     path('ebook/', include('eBook.urls')),
     path('down/', include('down.urls')),
-    path('accounts/', include('accounts.urls')),
 ]

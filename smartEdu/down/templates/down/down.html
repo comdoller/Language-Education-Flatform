@@ -3,43 +3,16 @@
 
 {% block content %}
 <html>
+	<body>
+		{% if sql %}
+        	{% for s in sql %}
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset = utf-8">
-    <script src = "multiFileDown.js"></script>
-    <script>
-        var suffix = 1;
-        function download(oFrm){
-        var oChk = oFrm.elements["pdf"+(suffix++)];
-        if(oChk){
-            if(oChk.checked){
-                location.href = oChk.value;
-                setTimeout(function(){ download(oFrm)},1000);
-             }
-             else{
-                download(oFrm);
-             }
-         }
-     }
+        	<ul>
+				<li><a href="{{s.eData}}" download='download'>{{s.eName}}</a></li>
+			</ul>
 
-    </script>
-</head>
-
-<body>
-    <form>
-        <fieldset>
-            {% for s in sql %}
-            <div>
-                <input type = "checkbox" name = "pdf{{ forloop.counter }}" id = "pdf{{ forloop.counter }}" value = "{{s.eData}}" />
-                <label style="color:red;" for ="pdf{{ forloop.counter }}">pdf{{ forloop.counter }}</label>
-            </div>
-            {% endfor %}
-            <div>
-                <input type = "button" value = "Download" onclick ="suffix=1;download(this.form);return false" />
-            </div>
-        </fieldset>
-    </form>
-</body>
-
+        	{% endfor %}
+		{% endif %}
+	</body>
 </html>
 {%endblock%}
