@@ -16,3 +16,5 @@ class Ebook(models.Model):
 
     def __str__(self):
         return "eNo : " + self.eNo + " eName : " + self.Name + " eData : " + self.Data
+
+##여기

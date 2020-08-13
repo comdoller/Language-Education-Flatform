@@ -22,4 +22,5 @@ urlpatterns = [
     path('dictionary/', include('dictionary.urls')),
     path('ebook/', include('eBook.urls')),
     path('down/', include('down.urls')),
+    path('board/', include('board.urls')),
 ]
