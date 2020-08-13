@@ -50,11 +50,27 @@
         <a class="p-2 text-dark" href="#">test</a>
         <a class="p-2 text-dark" href="{% url 'down:down' %}">download</a>
       </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+
+
+      	{% if user.is_authenticated %}
+		   Hi! &nbsp&nbsp
+		   <b><a style="font-size:1.2em;" href="#">{{ user.username }}</a></b>
+		   &nbsp&nbsp&nbsp&nbsp<!-- 이후 링크 클릭시 마이페이지 이동 -->
+        <a class="btn btn-outline-primary" href="{% url 'accounts:logout' %}">logout</a>
+        {% else %}
+        <a class="btn btn-outline-primary" href="{% url 'accounts:login' %}">login</a>
+        {% endif %}
+
+		   <!-- 로그인이 되어 있다면
+		   사용자의 아이디와 로그아웃 버튼이 보여지고
+		   그렇지 않다면, (로그인이 되어있지 않다면)
+		   로그인 버튼이 보여짐
+		    -->
+
+
 	   </div>
+
 	</header>
-
-
 		  <!--header end-->
 	</head>
 	<body id="top">

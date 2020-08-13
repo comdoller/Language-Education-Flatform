@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Dictionary
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 
 # Create your views here.
 
-
 def showDictionary(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
 
     qs = Dictionary.objects.all()
     page = int(request.GET.get('p', 1))

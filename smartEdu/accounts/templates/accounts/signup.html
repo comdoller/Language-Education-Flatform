@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+
+    {% block content %}
+<main id="main">
+
+ <!--
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li>Account</li>
+            </ol>
+            <h2>sign up</h2>
+
+        </div>
+    </section>
+    -->
+
+ <div class="col-lg-6" style="text-align:center; margin:0px auto;">
+    <h1>sign up</h1>
+    <form method="POST" action="{% url 'accounts:signup' %}">
+        {% csrf_token %}
+        Username :
+        <br>
+        <input name="username" type="text"  style="text-align:center; margin:0px auto;">
+        <br>
+        <br>
+        Password:
+        <br>
+        <input name="password1" type="password"  style="text-align:center; margin:0px auto;">
+        <br>
+        <br>
+        Confirm Password:
+        <br>
+        <input name="password2" type="password"  style="text-align:center; margin:0px auto;">
+        <br><br>
+        <input type="submit" class="btn btn-primary" value="sign up">
+    </form>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+</main><!-- End #main -->
+
+    {% endblock %}
