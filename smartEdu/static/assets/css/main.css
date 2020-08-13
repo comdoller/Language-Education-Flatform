@@ -76,7 +76,7 @@
 	}
 
 	body {
-		background: #202024;
+		background: #fff;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -93,7 +93,7 @@
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.75);
+		color: #000000;
 		font-family: "Source Sans Pro", sans-serif;
 		font-size: 14pt;
 		font-weight: 300;
@@ -145,7 +145,7 @@
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		color: rgba(255, 255, 255, 0.75);
+		color: #000000;
 		text-decoration: none;
 		border-bottom: 1px dotted;
 		outline: 0;
@@ -170,7 +170,7 @@
 	}
 
 	h1, h2, h3, h5, h6 {
-		color: #fff;
+		color: #000000;
 		font-weight: 400;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
@@ -345,13 +345,13 @@
 
 		
 	form {
-		
+		padding-top:120px;
 		margin: 0 0 2em 0;
-
+        text-align:center;
 	}
 
 	label {
-		color: #fff;
+		color: #000000;
 		display: block;
 		font-size: 0.9em;
 		font-weight: 400;
@@ -377,7 +377,7 @@
 		outline: 0;
 		padding: 0 1em;
 		text-decoration: none;
-		width: 100%;
+		width: 20%;
 	}
 
 		input[type="text"]:invalid,
@@ -436,6 +436,8 @@
 	input[type="password"],
 	input[type="email"],
 	select {
+	    margin-top:100;
+	    margin-left:54em;
 		height: 2.75em;
 	}
 
@@ -460,7 +462,7 @@
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: rgba(255, 255, 255, 0.75);
+			color: #000000;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -545,10 +547,11 @@
 
 /* Box */
 
+    .
 	.box {
 		border-radius: 4px;
 		margin-bottom: 2em;
-		background: #2c2c32;
+		background: #ffe4c4;
 		text-align: center;
 	}
 
@@ -938,6 +941,7 @@
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		background-color: #70c7be;
 		border-radius: 4px;
+		margin-top:20px;
 		border: 0;
 		color: #ffffff !important;
 		cursor: pointer;
@@ -1272,7 +1276,8 @@
 				color: #FFF;
 			}
 
-		#banner video {
+
+		 #banner video {
 			-moz-transform: translateX(50%) translateY(50%);
 			-webkit-transform: translateX(50%) translateY(50%);
 			-ms-transform: translateX(50%) translateY(50%);
@@ -1359,6 +1364,7 @@
 			width: 90%;
 			max-width: 80em;
 			margin: 0 auto;
+			color: black;
 		}
 
 			@media screen and (max-width: 480px) {
@@ -1372,13 +1378,13 @@
 /* Footer */
 
 	#footer {
-		padding: 4em 0 2em 0;
-		background-color: #1b1b1f;
+		padding: 2em 0 1em 0;
+		background-color: 	#E0FFFF;
 		text-align: center;
 	}
 
 		#footer .inner {
-			width: 50%;
+			width: 30%;
 			margin: 0 auto;
 		}
 
@@ -1399,7 +1405,7 @@
 			}
 
 		#footer .copyright {
-			color: rgba(255, 255, 255, 0.5);
+			color: #000000;
 			font-size: 0.9em;
 			margin: 0 0 2em 0;
 			padding: 0;

@@ -14,9 +14,9 @@
                 })
         });
         </script>
-<div row="" align="center">
+<br row="" align="center">
 
-    <div col="">
+    <div col="" align="center" >
         {% if sql %}
         {% for s in sql %}
         <button type="button" class="btn btn-primary"><a data-url="{{s.eData}}" class="btn btn-info"> {{s.eName}}</a></button>
@@ -25,11 +25,13 @@
         <p> 데이터 삽입 부탁드립니다 !</p>
         {% endif %}
     </div>
-    </br>
-    </br>
+
+</br>
+
     <!-- 크게 보기 -->
-    <div col="">
-        {% if sql %}
+    <div col="" align="center">
+
+         {% if sql %}
         {% for s in sql %}
 
         <a href="{{s.eData}}"  target="_blank" class="btn btn-info">{{s.eName}} 크게보기</a>

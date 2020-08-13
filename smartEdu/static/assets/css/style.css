@@ -981,7 +981,7 @@ ul.sidebar-menu li.active a i {
 
     min-height: 50px;
 
-    padding: 0 15px;
+    padding: 0px;
 
 }
 
@@ -2077,9 +2077,9 @@ div[data-role="editor-toolbar"] {
 
   color : #fff;
 
-  background : #1a2732;
+  background : #fff;
 
-  background-color : #1a2732;
+  background-color : #fff;
 
 }
 
