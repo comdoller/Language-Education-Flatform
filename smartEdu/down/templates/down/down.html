@@ -31,7 +31,7 @@
             {% for s in sql %}
             <div>
                 <input type = "checkbox" name = "pdf{{ forloop.counter }}" id = "pdf{{ forloop.counter }}" value = "{{s.eData}}" />
-                <label for ="pdf{{ forloop.counter }}">pdf{{ forloop.counter }}</label>
+                <label style="color:red;" for ="pdf{{ forloop.counter }}">pdf{{ forloop.counter }}</label>
             </div>
             {% endfor %}
             <div>
