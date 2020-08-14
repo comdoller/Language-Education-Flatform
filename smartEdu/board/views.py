@@ -16,6 +16,8 @@ def board(request):
 def write(request):
     return render(request,"write.html")
 
+UPLOAD_DIR = ' / up / '
+
 @csrf_exempt
 def insert(request):
     fname = ""
