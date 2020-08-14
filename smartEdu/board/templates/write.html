@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Write Page</title>
+</head>
+<body>
+	<h2>글쓰기</h2>
+	<form action="insert" id="form1" name="form1" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+		<div>이름<input type="text" name="writer" size="80" placeholder="이름을 입력하세요"/></div>
+		<div>제목<input type="text" name="title" size="80" placeholder="제목을 입력하세요"/></div>
+		<div style="width: 800px">내용
+			<textarea name="content" cols="80" rows="3" placeholder="내용을 입력하세요"></textarea>
+		</div>
+		<div style="width: 800px">첨부파일
+			<input type="file" name="file"/>
+		</div>
+		<div style="width: 700px; text-align: center;">
+			<button type="submit" id="btnSave">확인</button>
+		</div>
+	</form>
+</body>
+</html>
+
+{%endblock%}

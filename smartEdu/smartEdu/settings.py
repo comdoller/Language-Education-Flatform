@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'eBook',
     'dictionary',
     'down',
-#    'board',
+   'board',
     'accounts',
 ]
 
