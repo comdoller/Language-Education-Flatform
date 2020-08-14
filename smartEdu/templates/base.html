@@ -45,10 +45,11 @@
 		   </div>
 
       <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="{% url 'eBook:eBook' %}">Ebook</a>
-        <a class="p-2 text-dark" href="{% url 'dictionary:showDictionary' %}">Dictionary</a>
-        <a class="p-2 text-dark" href="#">test</a>
-        <a class="p-2 text-dark" href="{% url 'down:down' %}">download</a>
+		  <a class="p-2 text-dark" href="{% url 'eBook:eBook' %}">Ebook</a>
+		  <a class="p-2 text-dark" href="{% url 'dictionary:showDictionary' %}">Dictionary</a>
+		  <a class="p-2 text-dark" href="#">test</a>
+		  <a class="p-2 text-dark" href="{% url 'down:down' %}">Download</a>
+		  <a class="p-2 text-dark" href="{% url 'board:board' %}">Q&A</a>
       </nav>
 
       	{% if user.is_authenticated %}

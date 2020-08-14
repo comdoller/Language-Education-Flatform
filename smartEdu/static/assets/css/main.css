@@ -10,7 +10,7 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -43,6 +43,7 @@
 	table {
 		border-collapse: collapse;
 		border-spacing: 0;
+
 	}
 
 	body {
@@ -169,7 +170,7 @@
 		margin: 0 0 2em 0;
 	}
 
-	h1, h2, h3, h5, h6 {
+	h1, h2, h3, h6 {
 		color: #000000;
 		font-weight: 400;
 		line-height: 1.5;
@@ -191,14 +192,20 @@
 
 	h3 {
 		font-size: 1.35em;
+
+
 	}
 
 	h4 {
 		font-size: 1.1em;
+		margin-top:130px;
+		margin-left:4em;
 	}
 
 	h5 {
 		font-size: 0.9em;
+		margin-top:20px;
+		margin-left:4em;
 	}
 
 	h6 {
@@ -340,7 +347,12 @@
 				}
 
 			}
-
+        .question{
+        margin-top:100px;
+        width:60%;
+        height:300px;
+        margin:0 auto;
+        }
 /* Form */
 
 		
@@ -353,17 +365,37 @@
 	label {
 		color: #000000;
 		display: block;
-		font-size: 0.9em;
+		font-size: 1em;
 		font-weight: 400;
-		margin: 0 0 1em 0;
+		margin: 2em 0 0 0;
 	}
+    textarea{
+    -moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		background: rgba(144, 144, 144, 0.075);
+		border-radius: 4px;
+		border: none;
+		border: solid 1px rgba(144, 144, 144, 0.25);
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 0 1em;
+        width: 100%;
+		height:300px;
+    }
+
+    .qna{
+    margin:10px;
+    }
 
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
 	select,
-	textarea {
+	 {
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
@@ -378,6 +410,7 @@
 		padding: 0 1em;
 		text-decoration: none;
 		width: 20%;
+
 	}
 
 		input[type="text"]:invalid,
@@ -437,7 +470,7 @@
 	input[type="email"],
 	select {
 	    margin-top:100;
-	    margin-left:54em;
+	    margin-left:3em;
 		height: 2.75em;
 	}
 
@@ -457,6 +490,9 @@
 		opacity: 0;
 		width: 1em;
 		z-index: -1;
+	}
+	.file{
+	margin:15px;
 	}
 
 		input[type="checkbox"] + label,
@@ -864,8 +900,10 @@
 	}
 
 	table {
-		margin: 0 0 2em 0;
-		width: 100%;
+		margin: 0 auto;
+		width: 98%;
+		text-align:center;
+		margin-bottom:120px
 	}
 
 		table tbody tr {
@@ -923,7 +961,8 @@
 			table.alt tfoot {
 				border-top: 0;
 			}
-
+        .qna2{
+        margin-top:50px;}
 /* Button */
 
 	input[type="submit"],
@@ -942,6 +981,7 @@
 		background-color: #70c7be;
 		border-radius: 4px;
 		margin-top:20px;
+
 		border: 0;
 		color: #ffffff !important;
 		cursor: pointer;

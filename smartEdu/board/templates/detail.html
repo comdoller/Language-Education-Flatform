@@ -24,15 +24,15 @@ function del(){
 </script>
 </head>
 <body>
-	<h2>상세보기 / 수정</h2>
+	<h4>상세보기 / 수정</h4>
 	<form id="form1" name="form1" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
-		<label>이름</label><input type="text" name="writer" size="80" value="{{dto.writer}}" /><br/>
-		<label>날짜</label><p>{{dto.post_date}}</p><br/>
-		<label>조회수</label><input type="text" value="{{dto.hit}}" readonly="readonly"><br/>
-		<label>제목</label><input type="text" name="title" size="80" value="{{dto.title}}"/><br/>
+		<div class="qna">이름<input type="text" name="writer" size="80"  value="{{dto.writer}}"/></div>
+		<div class="qna">날짜 <p>{{dto.post_date}}</p></div>
+		<div class="qna">조회수 <p>{{dto.hit}}</p></div>
+		<div class="qna">제목<input type="text" name="writer" size="80"  value="{{dto.title}}"/></div>
 		<label>내용</label><br/>
-			<textarea name="content" cols="80" rows="3">{{dto.content}}</textarea><br/>
+			<textarea class="question" cols="80" rows="3">{{dto.content}}</textarea><br/>
 
 		<label>첨부파일</label><br/>
 			<p>
@@ -49,8 +49,8 @@ function del(){
 	</form>
 	<form method="post" action="reply_insert">
 	{% csrf_token %}
-		<input type="text" name="writer" placeholder="이름" /><br/>
-		<textarea name="content" cols="80" rows="5" placeholder="댓글 내용을 입력하세요"></textarea><br/>
+		댓글작성자<input type="text" name="writer" placeholder="이름" /><br/>
+		<textarea class="question" cols="80" rows="5" placeholder="댓글 내용을 입력하세요"></textarea><br/>
 		<input type="hidden" name="idx" value="{{dto.idx}}"/>
 		<button>댓글쓰기</button>
 	</form>
