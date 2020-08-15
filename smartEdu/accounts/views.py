@@ -40,7 +40,7 @@ def signup(request):
                 username=request.POST["username"], password=request.POST["password1"])
             auth.login(request, user)
             return redirect('accounts:home')
-        return render(request, "accounts/signup.html")
+        return render(request, "accounts/signup.html", {'pwd_error': 'The passwords are different.'} )
 
     return render(request, "accounts/signup.html")
 
