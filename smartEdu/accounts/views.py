@@ -16,6 +16,10 @@ def login(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
+
+        if username is "" or password is "":
+            return render(request, 'accounts/login.html', {'empty_error': 'input login info.'})
+
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
@@ -34,6 +38,8 @@ def signup(request):
         if User.objects.filter(username=request.POST["username"]).exists():
             return render(request, 'accounts/signup.html', {'error': 'username is Duplicate'})
 
+        if request.POST["username"] is "" or request.POST["password11"] is "" or request.POST["password2"] is "":
+            return render(request, 'accounts/signup.html', {'empty_error': 'input signup info.'})
 
         if request.POST["password1"] == request.POST["password2"]:
             user = User.objects.create_user(
