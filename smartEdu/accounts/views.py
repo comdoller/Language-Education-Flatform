@@ -38,7 +38,7 @@ def signup(request):
         if User.objects.filter(username=request.POST["username"]).exists():
             return render(request, 'accounts/signup.html', {'error': 'username is Duplicate'})
 
-        if request.POST["username"] is "" or request.POST["password11"] is "" or request.POST["password2"] is "":
+        if request.POST["username"] is "" or request.POST["password1"] is "" or request.POST["password2"] is "":
             return render(request, 'accounts/signup.html', {'empty_error': 'input signup info.'})
 
         if request.POST["password1"] == request.POST["password2"]:
