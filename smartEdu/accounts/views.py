@@ -4,6 +4,8 @@ from django.contrib import auth
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+import logging
+
 def home(request):
     return render(request, "home/index.html")
 
@@ -28,6 +30,11 @@ def signup(request):
         return redirect('accounts:home')
 
     if request.method == "POST":
+
+        if User.objects.filter(username=request.POST["username"]).exists():
+            return render(request, 'accounts/signup.html', {'error': 'username is Duplicate'})
+
+
         if request.POST["password1"] == request.POST["password2"]:
             user = User.objects.create_user(
                 username=request.POST["username"], password=request.POST["password1"])
@@ -40,3 +47,6 @@ def signup(request):
 def logout(request):
     auth.logout(request)
     return redirect('accounts:home')
+
+
+
