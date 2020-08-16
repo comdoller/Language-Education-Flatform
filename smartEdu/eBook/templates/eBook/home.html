@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<br align="center">
+    <div col="" align="center" >
+        {% if sql %}
+        {% for s in sql %}
+        <li><a href="{% url 'eBook:viewpdf' s.eNO %}"> {{s.eName}}</a> <br><br>
+        {% endfor %}
+        {% else %}
+        {% endif %}
+    </div>
+
+
+
+</br>
+</br>
+</br>
+
+</div>
+<br><br>
+
+
+{% endblock %}

@@ -10,5 +10,10 @@ def eBook(request):
         return redirect('accounts:login')
 
     sql = Ebook.objects.all()
-    return render(request, "eBook/ebook.html",{'sql': sql})
+    return render(request, "eBook/home.html",{'sql': sql})
+
+def viewpdf(request, NO):
+    qs = Ebook.objects.get(eNO=NO)
+    context = {'ebook_data': qs }
+    return render(request, "eBook/ebook.html", context)
 

@@ -1,0 +1,197 @@
+
+html, body {width: 100%; height: 100%; overflow:hidden;}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.eb-warp {
+    width: 100%;
+    height: 100%;
+}
+
+.eb-header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 2px #cecece solid;
+    text-align: center;
+}
+
+.eb-nav {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    z-index: 100;
+    position: relative;
+    background-color: #fff;
+}
+
+.eb-main {
+    width: 100%;
+    height: calc(100% - 120px);
+    background-color: #ececec;
+}
+
+.eb-header-manu {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 4px 15px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity : 0.8;
+    cursor:pointer;
+    border-radius: 5px;
+}
+.eb-header-manu:hover {
+    opacity: 1;
+    background-color:#ececec;
+}
+.eb-header > ul {
+    height: 100%;
+    display: inline-block;
+}
+
+.eb-header-manu.list {
+    background-image: url(../../assets/images/list.png);
+}
+
+.eb-header-manu.download {
+    background-image: url(../../assets/images/download.png);
+    background-size: 65%;
+}
+
+.eb-header-manu.print {
+    background-image: url(../../assets/images/print.png);
+}
+
+.eb-nav-icon {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    opacity:0.6;
+    margin:5px 5px;
+    cursor:pointer;
+}
+
+.eb-nav-icon:hover {
+    opacity:1;
+}
+
+.eb-nav > ul {
+    display: inline-block;
+}
+
+.eb-nav-icon.none {
+	opacity: 0.3;
+	cursor: default;
+}
+
+.eb-nav-icon.first {
+    background-image: url(../../assets/images/first.png);
+}
+
+.eb-nav-icon.prev {
+    background-image: url(../../assets/images/prev.png);
+}
+
+.eb-nav-icon.next {
+    background-image: url(../../assets/images/next.png);
+}
+
+.eb-nav-icon.last {
+    background-image: url(../../assets/images/last.png);
+}
+
+.eb-nav-icon.info {
+    width:110px;
+    background-color:#5f7e96;
+    border-radius:15px;
+	font-size: 20px;
+    line-height: 47px;
+    color: #fff;
+}
+
+.eb-pdf-viewer {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+}
+
+.eb-pdf-viewer-content {
+	width: 100%;
+	height: 100%;
+	margin: 0px auto !important;
+}
+
+.eb-page-info.active, .eb-page-info-set.active {
+	display: block;
+}
+
+.eb-page-info, .eb-page-info-set {
+	display: none;
+}
+
+.eb-page-info-set {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    text-align: center;
+    margin-top: 9px;
+}
+
+#loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; background: rgba(255,255,255,1) no-repeat center center; background-size: 150px;}
+#loader-wrapper > #loading {position: absolute; left: 50%; top: calc(50% + 75px); margin: -100px 0 0 -25px; display: inline-block; width: 50px; height: 50px; border: 3px solid rgba(0,0,0,0.3); border-radius: 50%; border-top-color: #111; animation: spin 1s ease-in-out infinite; }
+@-webkit-keyframes spin {to {transform: rotate(360deg);}}
+@-moz-keyframes spin {to {transform: rotate(360deg);}}
+@-ms-keyframes spin {to {transform: rotate(360deg);}}
+@-o-keyframes spin {to {transform: rotate(360deg);}}
+@keyframes spin {to {transform: rotate(360deg);}}

@@ -1,59 +1,247 @@
+{%load static %}
 
-{% extends 'base.html' %}
-{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>E-book</title>
+    <link rel="stylesheet" href="{% static 'ebook/assets/css/style.css' %}" />
+    <script type="text/javascript" src="{% static 'ebook/assets/plugins/jquery/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ebook/assets/plugins/pdf/processing.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ebook/assets/plugins/pdf/pdf.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ebook/assets/plugins/pdf/print.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ebook/assets/plugins/turn/turn.min.js' %}"></script>
+
+    <script type="text/javascript">
 
 
 
-{% block content %}
-<!-- Iframe 전환 완료 2020.08.07 KBY_TECH -->
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script>
-        $(document).ready(function(e) {
-            $('a').click(function(){
-                $('#iframe').attr('src',$(this).attr('data-url'));
-                })
+    $(function() {
+        var url = '{{ ebook_data.eData }}';
+        var pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '{% static 'ebook/assets/plugins/pdf/pdf.worker.js' %}';
+
+        var loadingTask = pdfjsLib.getDocument(url);
+        var pageNumber = 1;
+        var pdfObject  = null;
+        var pageWidth  = 0;
+        var pageHeight = 0;
+        var pageCount  = 0;
+        var imgMap     = [];
+
+        window.iePrintIframe = $('<iframe id="iePrintIframe" src="{% static 'ebook/assets/defaults/ie-print.html' %}" style="width:0px;height:0px;opacity:0; position:absolite;"></iframe>').appendTo('body');
+
+        var checkMobile = function() {
+			return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		}
+
+		var setPageInfo = function(npage){
+			$('.eb-nav-icon.info .npage').text((npage == null ? 1:npage));
+			$('.eb-nav-icon.info .tpage').text(pageCount);
+		}
+
+		var downloadURI = function() {
+			var name = url.substring(url.lastIndexOf('/')+1, url.length);
+			var link = document.createElement("a");
+			link.download = name;
+			link.href = url;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+			delete link;
+		}
+
+		var ieCheck = function(){
+			var agent = navigator.userAgent.toLowerCase();
+			if ( (navigator.appName == 'Netscape' && agent.indexOf('trident') != -1) || (agent.indexOf("msie") != -1)) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+        var getPage = function(){
+        	pdfObject.getPage(pageNumber++).then(function(page) {
+        		var PRINT_RESOLUTION = 150;
+				var PRINT_UNITS = PRINT_RESOLUTION / 72.0;
+
+                var scale = 1.2;
+                var viewport = page.getViewport({ scale: scale });
+
+                var canvas = document.createElement('canvas');
+                var context = canvas.getContext('2d');
+
+				var ww = $('.eb-main').width();
+				var wh = $('.eb-main').height();
+
+				var perH = wh / viewport.height * 100;
+
+				canvas.style.height = wh+'px';
+				canvas.style.width 	= (viewport.width * perH / 100)+'px';
+
+				pageWidth = canvas.style.width;
+				pageHeight = canvas.style.height;
+
+				canvas.width = Math.floor(viewport.width * PRINT_UNITS);
+				canvas.height = Math.floor(viewport.height * PRINT_UNITS);
+
+                var renderContext = {
+                    canvasContext: context,
+                    transform: [PRINT_UNITS, 0, 0, PRINT_UNITS, 0, 0],
+                    viewport: viewport,
+                    intent: 'print'
+                };
+                var renderTask = page.render(renderContext);
+                renderTask.promise.then(function() {
+                    $('#pdfView').append(canvas);
+                    getPage();
+                    imgMap.push(canvas.toDataURL());
+                });
+            }, function(error){
+            	var display 	= 'double';
+            	var screenWidth = parseInt(pageWidth) * 2;
+
+            	if (checkMobile()) {
+            		double = 'single';
+            		pageWidth = pageWidth / 2;
+            	}
+
+            	window.pdfView = $("#pdfView").turn({
+					width: screenWidth,
+					height: pageHeight - 20,
+					autoCenter: true,
+					display:display
+				});
+
+				setTimeout(function(){
+					$('#loader-wrapper').remove();
+				}, 400);
+
+            	$('.eb-nav-icon.prev, .eb-nav-icon.first').addClass('none');
+
+            	$('.eb-page-info-set').on('keyup', function(e){
+            		if(e.keyCode == 13) $('.eb-page-info-set').blur();
+            	});
+
+            	$('.eb-page-info-set').on('blur', function(){
+            		var value = Number( isNaN(Number($(this).val())) ? 1:$(this).val() );
+            		if(value >= pageCount) value = pageCount - 1;
+
+            		if(!(typeof value == 'string' && value.trim() == '')){
+            			window.pdfView.turn("page", value);
+            		}
+
+            		$('.eb-page-info').addClass('active');
+					$('.eb-page-info-set').removeClass('active');
+            	});
+
+				$('.eb-nav-icon').on('click', function(){
+					if($(this).hasClass('none')){
+						return false;
+					}else if($(this).hasClass('first')){
+						window.pdfView.turn("page", 1);
+					}else if($(this).hasClass('prev')){
+						window.pdfView.turn("previous");
+					}else if($(this).hasClass('next')){
+						window.pdfView.turn("next");
+					}else if($(this).hasClass('last')){
+						window.pdfView.turn("page", pageCount);
+					}else if($(this).hasClass('info')){
+						var _info 	= $(this).children('.eb-page-info');
+						var _input 	= $(this).children('.eb-page-info-set');
+						if(_info.hasClass('active')){
+							_info.removeClass('active');
+							_input.val('');
+							_input.addClass('active');
+							_input.focus();
+						}else{
+							_info.addClass('active');
+							_input.removeClass('active');
+						}
+					}
+				});
+
+				$('.eb-header-manu').on('click', function(){
+					if($(this).hasClass('list')){
+
+					}else if($(this).hasClass('download')){
+						downloadURI(url);
+					}else if($(this).hasClass('print')){
+						if (ieCheck()) {
+							if(window.iePrintLoad == null){
+								window.iePrintLoad = true;
+								for(var i=0, len=imgMap.length; i<len; i++){
+									window.iePrintIframe.contents().find('body').append('<img src="'+imgMap[i]+'" />');
+								}
+							}
+							/*if (ieCheck()) */
+							document.getElementById("iePrintIframe").contentWindow.document.execCommand('print', false, null);
+						} else printJS(window.location.href+url);
+					}
+				});
+
+				window.pdfView.bind("turned", function(event, page, view) {
+					$('.eb-nav-icon').removeClass('none');
+					if(page == 1){
+						$('.eb-nav-icon.prev, .eb-nav-icon.first').addClass('none');
+					}else if(page == pageCount-1){
+						$('.eb-nav-icon.next, .eb-nav-icon.last').addClass('none');
+					}
+					setPageInfo(page);
+				});
+
+				setPageInfo();
+
+			    return false;
+			});
+        }
+        loadingTask.promise.then(function(pdf) {
+            pdfObject = pdf;
+            pageCount = pdfObject._pdfInfo.numPages;
+            getPage();
+        }, function(reason) {
+            console.error(reason);
         });
-        </script>
-<br row="" align="center">
+    });
+    </script>
+</head>
 
-    <div col="" align="center" >
-        {% if sql %}
-        {% for s in sql %}
-        <button type="button" class="btn btn-primary"><a data-url="{{s.eData}}" class="btn btn-info"> {{s.eName}}</a></button>
-        {% endfor %}
-        {% else %}
-        <p> 데이터 삽입 부탁드립니다 !</p>
-        {% endif %}
-    </div>
+<body>
+	<div id="loader-wrapper">
+	    <div id="loading"></div>
+	</div>
+	<div class="eb-warp">
+		<div class="eb-header">
+			<ul>
+				<li class="eb-header-manu list"></li>
+				<li class="eb-header-manu download"></li>
+				<li class="eb-header-manu print"></li>
+			</ul>
+		</div>
+		<div class="eb-main">
+			<div class="eb-pdf-viewer">
+				<div id="pdfView" class="eb-pdf-viewer-content"></div>
+			</div>
+		</div>
+		<div class="eb-nav">
+			<ul>
+				<li class="eb-nav-icon first"></li>
+				<li class="eb-nav-icon prev"></li>
+				<li class="eb-nav-icon info">
+					<div class="eb-page-info active">
+						<span class="npage">0</span> / <span class="tpage">0</span>
+					</div>
+					<input type="text" class="eb-page-info-set" name="goPage">
+				</li>
+				<li class="eb-nav-icon next"></li>
+				<li class="eb-nav-icon last"></li>
+			</ul>
+		</div>
+	</div>
+	<div></div>
+    <!--  -->
+</body>
 
-
-</br>
-
-    </br>
-    </br>
-
-
-    <!-- 크게 보기 -->
-    <div col="" align="center">
-
-         {% if sql %}
-        {% for s in sql %}
-
-        <a href="{{s.eData}}"  target="_blank" class="btn btn-info">{{s.eName}} 크게보기</a>
-
-        {% endfor %}
-
-        {% else %}
-        {% endif %}
-
-        </br>
-        </br>
-
-        <iframe id="iframe" width="1024" height="800" src=""></iframe>
-    </div>
-
-</div>
-<br><br>
-
-
-{% endblock %}
+</html>
