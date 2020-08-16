@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     'eBook',
     'dictionary',
     'down',
-   'board',
+    'board',
     'accounts',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'smartEdu.urls'
 
