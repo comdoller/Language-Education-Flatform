@@ -1,1 +1,9 @@
-### 2020_강원대학교_산학협력프로젝트 
+### Tetum-Korean Language Education
+
+***
+#### Install python requirements
+```
+pip install -r requirements.txt
+```
+***
+
