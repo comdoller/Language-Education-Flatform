@@ -24,7 +24,7 @@
 
     <div class="dictionary">
     {% if dictionaryAll %}
-        <table class="table" style="text-align : center;">
+        <table class="table" style="text-align : center; width : 80%;">
             <thread>
                 <tr style="border-bottom: 2px solid #1bb1dc;">
                 <td>no</td>
@@ -101,25 +101,6 @@
         <a href="?p={{dictionaryAll.paginator.num_pages}}">맨뒤로</a>
     {% endif %}
 </div>
-
-
-
-<!--
-        {% if dictionaryAll %}
-                {% for s in dictionaryAll %}
-                    {{s.dNo}}
-                    {{s.dTetum}}
-                    {{s.dKorea}}
-                    {{s.dJapan}}
-                    {{s.dBahasa}}
-                    <br>
-                    <br>
-                {% endfor %}
-
-        {% else %}
-                <p>no POST</p>
-        {% endif %}
--->
 
     </div>
 </body>

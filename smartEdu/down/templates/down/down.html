@@ -5,15 +5,30 @@
 <html>
 	<body>
 	<h4>다운로드 게시판 - 원하는 자료를 다운받을 수 있습니다.</h4>
-		{% if sql %}
-        	{% for s in sql %}
+	<br>
+	 <table class="table" style="text-align : center;  width: 70%;">
+            <thread>
+                <tr style="border-bottom: 2px solid #1bb1dc;">
+                <td>유형</td>
+                <td>제목</td>
+                <td>다운로드</td>
+            </tr>
+            </thread>
 
-        	<ul class="down">
-				<li><a href="{{s.eData}}" download='download'>{{s.eName}}</a></li>
-			</ul>
+    {% for s in sql %}
 
-        	{% endfor %}
-		{% endif %}
+    <tr onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#ffffff'">
+        <td>E-book</td>
+        <td>{{s.eName}}</td>
+		<td><a href="{{s.eData}}" download> ↙ </a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+	<br>
+	<br>
 	</body>
 </html>
 {%endblock%}
+
+
