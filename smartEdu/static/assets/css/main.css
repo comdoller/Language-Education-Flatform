@@ -201,8 +201,8 @@
 
 	h4 {
 		font-size: 2em;
-		margin-top:130px;
-		margin-left:4em;
+		margin-top:150px;
+
 		text-align:center;
 		font-family: 'Jua', sans-serif;
 	}
@@ -377,7 +377,7 @@
 
 		
 	form {
-		padding-top:120px;
+		padding-top:70px;
 		margin: 0 0 2em 0;
         text-align:center;
 	}
@@ -490,7 +490,8 @@
 	input[type="email"],
 	select {
 	    margin-top:100;
-	    margin-left:3em;
+	    margin-left:10px;
+	    margin-right:10px;
 		height: 2.75em;
 	}
 
@@ -765,9 +766,9 @@
 	text-decoration:none;
 }
 ul li a:hover, ul li a:focus {
-	color:#fff;
-	border:1px solid #40E0D0;
-	background-color:#40E0D0;
+	color:#FFE4B5;
+	border:1px solid #FFE4B5;
+	background-color:#FFE4B5;
 }
 
 
