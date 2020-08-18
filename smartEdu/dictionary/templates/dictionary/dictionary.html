@@ -11,7 +11,9 @@
 
 
     {% block content %}
-
+<html>
+    <body>
+    <h4>사전 - 원하는 단어를 검색할 수 있습니다.</h4>
          <!-- Inline form-->
     <div row="" align="center">
         <form action="{% url 'dictionary:search' %}" method="get">
@@ -20,13 +22,7 @@
         </form>
     </div>
 
-
-      </section>
-
-    </div>
-  </div>
-
-
+    <div class="dictionary">
     {% if dictionaryAll %}
         <table class="table" style="text-align : center;">
             <thread>
@@ -125,7 +121,7 @@
         {% endif %}
 -->
 
-
-
-
+    </div>
+</body>
+</html>
 {% endblock %}

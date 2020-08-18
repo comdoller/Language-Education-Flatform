@@ -4,10 +4,11 @@
 {% block content %}
 <html>
 	<body>
+	<h4>다운로드 게시판 - 원하는 자료를 다운받을 수 있습니다.</h4>
 		{% if sql %}
         	{% for s in sql %}
 
-        	<ul>
+        	<ul class="down">
 				<li><a href="{{s.eData}}" download='download'>{{s.eName}}</a></li>
 			</ul>
 
