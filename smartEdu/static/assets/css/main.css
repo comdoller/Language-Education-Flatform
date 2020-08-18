@@ -897,6 +897,7 @@ ul li a:hover, ul li a:focus {
 	    background-color:#F4A460;
 
 	}
+
 	.qnabtn {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -938,6 +939,14 @@ ul li a:hover, ul li a:focus {
 		.button:active {
 			background-color: #5ec0b6;
 		}
+        .btn:hover{
+        border-color:#FFA07A;
+        background:	#FFA07A;
+        }
+        .btn:visited{
+        border-color:#FFA07A;
+        background:	#FFA07A;
+        }
 
 		input[type="submit"].icon,
 		input[type="reset"].icon,
