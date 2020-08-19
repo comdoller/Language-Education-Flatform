@@ -43,7 +43,9 @@ def signup(request):
 
         if request.POST["password1"] == request.POST["password2"]:
             user = User.objects.create_user(
-                username=request.POST["username"], password=request.POST["password1"])
+                username=request.POST["username"], password=request.POST["password1"],
+                first_name=request.POST["first_name"], last_name=request.POST["last_name"],
+                email=request.POST["email"])
             auth.login(request, user)
             return redirect('accounts:home')
         return render(request, "accounts/signup.html", {'pwd_error': 'The passwords are different.'} )
