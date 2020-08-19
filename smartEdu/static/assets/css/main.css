@@ -148,8 +148,7 @@
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		color: #000000;
 		text-decoration: none;
-		border-bottom: 1px dotted;
-		outline: 0;
+
 	}
 
 		a:hover {
@@ -168,6 +167,7 @@
 
 	p {
 		margin: 0 0 2em 0;
+		background-color:#F0F8FF;
 	}
 
 	h1, h2, h3, h6 {
@@ -190,6 +190,7 @@
 		font-size: 1.75em;
 		font-family: 'Pangolin', cursive;
 		margin-bottom:10px;
+		margin-top:10px;
 	}
 
 	h3 {
@@ -1326,6 +1327,7 @@ ul li a:hover, ul li a:focus {
 /* Main */
 
 	#main {
+	background-color:#ffffff;
 		padding: 4em 0 2em 0;
 	}
 
