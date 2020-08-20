@@ -4,11 +4,16 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.http import urlquote
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib import auth
 
 from .models import Board,Comment
 
 # Create your views here.
 def board(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     boardCount = Board.objects.count()
     boardList = Board.objects.all().order_by("-idx")
     return render(request, "board.html", {"boardList" : boardList, "boardCount" : boardCount})
@@ -31,7 +36,7 @@ def insert(request):
             fp.write(chunk)
         fp.close()
 
-    dto = Board(writer=request.POST["writer"], title=request.POST["title"], content=request.POST["content"],
+    dto = Board(writer=request.user.username, title=request.POST["title"], content=request.POST["content"],
                 filename=fname, filesize=fsize)
     dto.save()
     print(dto)

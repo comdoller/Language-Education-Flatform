@@ -11,7 +11,7 @@
 	<h4>글쓰기</h4>
 	<form action="insert" id="form1" name="form1" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
-		<div class="qna">이름<input type="text" name="writer" size="80" placeholder="이름을 입력하세요"/></div>
+	<!--	<div class="qna">이름 {{ user.last_name }} {{ user.first_name }} [{{user.username}}] </div> -->
 		<!-- <div class="qna">이름<input type="text" name="writer" size="80" value="{{ user.username }}" readonly  /></div> 글 작성시 작성자 이름 로그인 사용자 이름으로 고정-->
 		<div class ="qna">제목<input type="text" name="title" size="80" placeholder="제목을 입력하세요"/></div>
 		<div class="qna2">내용

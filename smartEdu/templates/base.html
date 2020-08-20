@@ -56,7 +56,7 @@
 
       	{% if user.is_authenticated %}
 		   Hi! &nbsp&nbsp
-		   <b><a style="font-size:1.2em;" href="#">{{ user.username }}</a></b>
+		   <b><a style="font-size:1.2em;" href="#">{{ user.last_name }} {{ user.first_name }} [{{user.username}}]</a></b>
 		   &nbsp&nbsp&nbsp&nbsp<!-- 이후 링크 클릭시 마이페이지 이동 -->
         <a class="btn btn-outline-primary" href="{% url 'accounts:logout' %}">logout</a>
         {% else %}
