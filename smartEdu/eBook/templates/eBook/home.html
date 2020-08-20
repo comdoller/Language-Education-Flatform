@@ -2,33 +2,85 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-
 {% block content %}
 <html>
+
+<style>
+
+.ebook_wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.ebook_container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.ebook_container:hover .image {
+  opacity: 0.3;
+}
+
+.ebook_container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #9370DB;
+  color: white;
+  font-size: 1.3em;
+  padding: 11px 25px;
+}
+
+<!-- 뭐 좀 하다가 생각나서 대충 넣어봤어요. css도 분리되어 있지 않고, div 갯수가 많아지면,,
+배열이 윗줄 아랫줄 붙어서 이상하긴 한데, 많이 이상하면 그냥 없애주세요. -->
+
+</style>
+
 <body>
     <h4>Ebook 게시판 - 표지를 누르면 이동합니다.</h4>
         <br>
         <br>
-    <div align="center">
 
+    <div align="center">
         {% if sql %}
         {% for s in sql %}
-        <span style="font-size:1.5em;"> {{s.eName}}</span>
-        <a class="ebook" href="{% url 'eBook:viewpdf' s.eNO %}">
-            <img src="{{s.eImg}}" style="width: 200px; height: 300px; margin:0px 50px;" >
-
-
-
-        </a>
-
-
+    <div class="ebook_wrapper">
+        <div class="ebook_container">
+            <img src="{{s.eImg}}" class="image" style="width: 120px; height: 180px; margin:0px 25px;" >
+            <div class="middle">
+                <a class="ebook" href="{% url 'eBook:viewpdf' s.eNO %}">
+                 <div class="text">{{s.eName}}
+                 </div>
+              </a>
+            </div>
+        </div>
+        </div>
         {% endfor %}
         {% else %}
         {% endif %}
     </div>
-
-
 
 </br>
 </br>
