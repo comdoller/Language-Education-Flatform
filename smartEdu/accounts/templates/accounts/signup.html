@@ -30,18 +30,34 @@
         {% csrf_token %}
         Username :
         <br>
-        <input name="username" type="text"  style="text-align:center; margin:0px auto;">  <p style="color:red"> {{ error }} </p>
+        <input name="username" type="text"  style="text-align:center; margin:0px auto;" required>  <p style="color:red"> {{ error }} </p>
         <br>
         <br>
         Password:
         <br>
-        <input name="password1" type="password"  style="text-align:center; margin:0px auto;">
+        <input name="password1" type="password"  style="text-align:center; margin:0px auto;" required>
         <br>
         <br>
         Confirm Password:
         <br>
-        <input name="password2" type="password"  style="text-align:center; margin:0px auto;">
-        <br><br>
+        <input name="password2" type="password"  style="text-align:center; margin:0px auto;" required>
+        <br>
+        <br>
+        first_name:
+        <br>
+        <input name="first_name" type="text"  style="text-align:center; margin:0px auto;" required>
+        <br>
+        <br>
+        last_name:
+        <br>
+        <input name="last_name" type="text"  style="text-align:center; margin:0px auto; " required>
+        <br>
+        <br>
+        email:
+        <br>
+        <input name="email" type="text"  style="text-align:center; margin:0px auto;">
+        <br>
+        <br>
         <p style="color:red">{{ pwd_error }} {{empty_error}}</p>
         <br><br>
         <input type="submit" class="btn btn-primary" value="sign up">
