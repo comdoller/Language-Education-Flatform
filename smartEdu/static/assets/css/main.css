@@ -10,8 +10,16 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, applet, object, iframe, h1, h2, h3, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	span{
+	    margin: 0;
 		padding: 0;
 		border: 0;
 		font-size: 100%;
@@ -49,7 +57,9 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
-
+    .ebook{
+    margin:10px;
+    }
 /* Box Model */
 
 	*, *:before, *:after {
@@ -167,7 +177,7 @@
 
 	p {
 		margin: 0 0 2em 0;
-		background-color:#F0F8FF;
+		background-color:#F5F5F5;
 	}
 
 	h1, h2, h3, h6 {
@@ -185,7 +195,10 @@
 		}
     h1{
     font-family: 'Pangolin', cursive;
+    color:#fff;
+    font-size:2em;
     }
+
 	h2 {
 		font-size: 1.75em;
 		font-family: 'Pangolin', cursive;
@@ -196,7 +209,7 @@
 	h3 {
 		font-size: 1.35em;
 		font-family: 'Pangolin', cursive;
-
+        font-weight:bold;
 
 	}
 
@@ -215,7 +228,7 @@
 	}
 
 	h6 {
-		font-size: 0.7em;
+		font-size: 1em;
 	}
 
 	sub {
@@ -873,7 +886,7 @@ ul li a:hover, ul li a:focus {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #70c7be;
+		background-color: #483D8B;
 		border-radius: 4px;
 		margin-top:20px;
 
@@ -889,15 +902,32 @@ ul li a:hover, ul li a:focus {
 		text-decoration: none;
 		white-space: nowrap;
 	}
+
 	.btn{
-	color:	#FFA07A;
-	border-color:	#FFA07A;
+	color:		#483D8B;
+	border-color:		#483D8B;
+	}
+	.btn-outline-primary{
+	color:	#483D8B;
+	border-color:	#483D8B;
 	}
 	.btn-info{
-	    color:#FFDAB9;
-	    background-color:#F4A460;
+	    color:#fff;
+	    background-color:#483D8B;
 
 	}
+	.btn-info:active{
+	    color:#fff;
+	    background-color:#483D8B;
+
+	}
+	.btn-info:visited{
+	    color:#fff;
+	    background-color:#483D8B;
+
+	}
+
+
 
 	.qnabtn {
 		-moz-appearance: none;
@@ -924,13 +954,22 @@ ul li a:hover, ul li a:focus {
 		text-decoration: none;
 		white-space: nowrap;
 	}
+	.qnabtn:hover{
+	    background-color:#483D8B;
+	    }
+	    .qnabtn:visited{
+	    background-color:#483D8B;
+	    }
+	    .qnabtn:active{
+	    background-color:#483D8B;
+	    }
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #82cec6;
+			background-color:#483D8B;
 		}
 
 		input[type="submit"]:active,
@@ -945,8 +984,8 @@ ul li a:hover, ul li a:focus {
         background:	#FFA07A;
         }
         .btn:visited{
-        border-color:#FFA07A;
-        background:	#FFA07A;
+        border-color:	#483D8B;
+        background:		#483D8B;
         }
 
 		input[type="submit"].icon,
@@ -1012,7 +1051,7 @@ ul li a:hover, ul li a:focus {
 		input[type="button"].style2,
 		button.style2,
 		.button.style2 {
-			background-color: #7f92cf;
+			background-color: #483D8B
 		}
 
 			input[type="submit"].style2:hover,
@@ -1020,7 +1059,7 @@ ul li a:hover, ul li a:focus {
 			input[type="button"].style2:hover,
 			button.style2:hover,
 			.button.style2:hover {
-				background-color: #92a2d6;
+				background-color: #483D8B;
 			}
 
 			input[type="submit"].style2:active,
@@ -1028,7 +1067,7 @@ ul li a:hover, ul li a:focus {
 			input[type="button"].style2:active,
 			button.style2:active,
 			.button.style2:active {
-				background-color: #6c82c8;
+				background-color: #483D8B;
 			}
 
 		input[type="submit"].style3,
@@ -1036,7 +1075,7 @@ ul li a:hover, ul li a:focus {
 		input[type="button"].style3,
 		button.style3,
 		.button.style3 {
-			background-color: #9d7ed0;
+			background-color: #483D8B;
 		}
 
 			input[type="submit"].style3:hover,
@@ -1044,7 +1083,7 @@ ul li a:hover, ul li a:focus {
 			input[type="button"].style3:hover,
 			button.style3:hover,
 			.button.style3:hover {
-				background-color: #ab91d7;
+				background-color: #483D8B;
 			}
 
 			input[type="submit"].style3:active,
@@ -1052,7 +1091,7 @@ ul li a:hover, ul li a:focus {
 			input[type="button"].style3:active,
 			button.style3:active,
 			.button.style3:active {
-				background-color: #8f6bc9;
+				background-color: #483D8B;
 			}
 
 		@media screen and (max-width: 480px) {
@@ -1358,7 +1397,7 @@ ul li a:hover, ul li a:focus {
 
 	#footer {
 		padding: 2em 0 1em 0;
-		background-color: 	#E0FFFF;
+		background-color: 	#483D8B;
 		text-align: center;
 	}
 

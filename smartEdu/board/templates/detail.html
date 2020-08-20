@@ -28,19 +28,19 @@ function del(){
 	<form id="form1" name="form1" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
 		<div class="qna">이름<input type="text" name="writer" size="80"  value="{{dto.writer}}"/></div>
-		<div class="qna">날짜 <p>{{dto.post_date}}</p></div>
-		<div class="qna">조회수 <p>{{dto.hit}}</p></div>
+		<div class="qna">날짜 <h6>{{dto.post_date}}</h6></div>
+		<div class="qna">조회수 <h6>{{dto.hit}}</h6></div>
 		<div class="qna">제목<input type="text" name="writer" size="80"  value="{{dto.title}}"/></div>
 		<label>내용</label><br/>
 			<textarea class="question" cols="80" rows="3">{{dto.content}}</textarea><br/>
 
 		<label>첨부파일</label><br/>
-			<p>
+			<h6>
 			{% if dto.filesize > 0 %}
 			<a href = "download?idx={{dto.idx}}">{{dto.filename}} ({{filesize}}KB)</a>
 			{% endif %}
 			<input type="file" name="file">
-			</p>
+			</h6>
 		<input type="hidden" name="idx" value="{{dto.idx}}"/>
         <a href="board">
             <input type="button" value="목록" /></a>
@@ -55,7 +55,7 @@ function del(){
 		<button>댓글쓰기</button>
 	</form>
 <!-- 댓글 목록 -->
-<h3>댓글 목록</h3>
+<p>댓글 목록</p>
 	<table border="1" style="width: 700px">
 	{% for row in commentList %}
 	<tr>

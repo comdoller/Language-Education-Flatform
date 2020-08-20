@@ -14,7 +14,14 @@
 
         {% if sql %}
         {% for s in sql %}
-        <a href="{% url 'eBook:viewpdf' s.eNO %}"><img src="{{s.eImg}}" style="width: 200px; height: 300px; margin:0px 50px;" > <span style="font-size:1.5em;"> {{s.eName}}</span></a>
+        <span style="font-size:1.5em;"> {{s.eName}}</span>
+        <a class="ebook" href="{% url 'eBook:viewpdf' s.eNO %}">
+            <img src="{{s.eImg}}" style="width: 200px; height: 300px; margin:0px 50px;" >
+
+
+
+        </a>
+
 
         {% endfor %}
         {% else %}
