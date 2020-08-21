@@ -241,8 +241,10 @@
 	}
 	.p-2{
 	font-family: 'Pangolin', cursive;
+	font-size:22px;
 	}
-
+    .logo{
+    font-size:25px;}
 	sup {
 		font-size: 0.8em;
 		position: relative;
