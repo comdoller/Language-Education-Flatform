@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+
+    {% block content %}
+<main id="main">
+
+<h2>mypage</h2>
+    <br>
+    <h3><a href = "{% url 'dictionary:mydictionary' user.username %}"> my dictionary </a> </h3>
+
+</main><!-- End #main -->
+
+    {% endblock %}

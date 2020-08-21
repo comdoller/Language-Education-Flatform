@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+
+    {% block content %}
+<html>
+    <body>
+    <h4>나의 단어장</h4>
+    <br>
+    <br>
+
+    {% if list %}
+            <table class="table" style="text-align : center; width : 80%;">
+            <thread>
+                <tr style="border-bottom: 2px solid #9400D3;">
+                <td>no</td>
+                <td>테툼어</td>
+                <td>영어</td>
+                <td>바하사</td>
+                <td>한국어</td>
+                <td>일어</td>
+            </tr>
+            </thread>
+
+    {% for s in list %}
+
+    <tr onmouseover="this.style.background='#E6E6FA'" onmouseout="this.style.background='#ffffff'">
+        <td>{{s.dNO}}</td>
+        <td>{{s.dTetum}}</td>
+        <td>{{s.dEnglish}}</td>
+        <td>{{s.dBahasa}}</td>
+        <td>{{s.dKorea}}</td>
+        <td>{{s.dJapan}}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+    {% else %}
+    <p>추가된 단어가 없어요.</p>
+    {% endif %}
+<br>
+<br>
+<br>
+</body>
+</html>
+{% endblock %}

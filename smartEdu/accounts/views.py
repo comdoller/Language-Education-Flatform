@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from dictionary.models import myDictionary
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -46,6 +47,10 @@ def signup(request):
                 username=request.POST["username"], password=request.POST["password1"],
                 first_name=request.POST["first_name"], last_name=request.POST["last_name"],
                 email=request.POST["email"])
+
+            qs = myDictionary(username=request.POST["username"])
+            qs.save()
+
             auth.login(request, user)
             return redirect('accounts:home')
         return render(request, "accounts/signup.html", {'pwd_error': 'The passwords are different.'} )
@@ -55,6 +60,10 @@ def signup(request):
 def logout(request):
     auth.logout(request)
     return redirect('accounts:home')
+
+
+def mypage(request):
+    return render(request, "accounts/mypage.html")
 
 
 

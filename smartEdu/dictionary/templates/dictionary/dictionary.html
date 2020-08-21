@@ -14,6 +14,8 @@
 <html>
     <body>
     <h4>사전 - 원하는 단어를 검색할 수 있습니다.</h4>
+
+    <h1 style="color:blue;"> <a href = "{% url 'dictionary:mydictionary' user.username %}"> 나의 단어장 </a> {{ account_error }}</h1>
          <!-- Inline form-->
     <div row="" align="center">
         <form action="{% url 'dictionary:search' %}" method="get">
@@ -28,6 +30,7 @@
             <thread>
                 <tr style="border-bottom: 2px solid #9400D3;">
                 <td>no</td>
+                <td>단어추가</td>
                 <td>테툼어</td>
                 <td>영어</td>
                 <td>바하사</td>
@@ -40,6 +43,8 @@
 
     <tr onmouseover="this.style.background='#E6E6FA'" onmouseout="this.style.background='#ffffff'">
         <td>{{s.dNO}}</td>
+        <td><a href="{% url 'dictionary:add' user.username s.dNO %}"> ✓ </a></td>
+
         <td>{{s.dTetum}}</td>
         <td>{{s.dEnglish}}</td>
         <td>{{s.dBahasa}}</td>
@@ -61,6 +66,7 @@
     <thread>
         <tr style="border-bottom: 2px solid #483D8B;">
             <td>no</td>
+            <td>단어추가</td>
             <td>테툼어</td>
             <td>영어</td>
             <td>바하사</td>
@@ -73,6 +79,7 @@
 
     <tr onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#ffffff'">
         <td>{{s.dNO}}</td>
+        <td><a href="#"> ✓ </a></td>
         <td>{{s.dTetum}}</td>
         <td>{{s.dEnglish}}</td>
         <td>{{s.dBahasa}}</td>

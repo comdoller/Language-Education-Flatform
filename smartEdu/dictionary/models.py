@@ -16,3 +16,17 @@ class Dictionary(models.Model):
 
     def __str__(self):
         return ""
+
+
+class myDictionary(models.Model):
+
+    idx = models.IntegerField(db_column='idx', primary_key=True)
+    username = models.CharField(db_column='username', max_length=150)
+    arr = models.CharField(db_column='arr', max_length=5000)
+
+    class Meta:
+        managed = False
+        db_table = 'myDictionary'
+
+    def __str__(self):
+        return ""
