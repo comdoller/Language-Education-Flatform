@@ -17,6 +17,10 @@ def showDictionary(request):
     return render(request, "dictionary/dictionary.html", {"dictionaryAll": context})
 
 def search(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     qs = Dictionary.objects.all()
     q = request.GET.get('q','')
     if q:

@@ -13,6 +13,9 @@ def eBook(request):
     return render(request, "eBook/home.html",{'sql': sql})
 
 def viewpdf(request, NO):
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     qs = Ebook.objects.get(eNO=NO)
     context = {'ebook_data': qs }
     return render(request, "eBook/ebook.html", context)

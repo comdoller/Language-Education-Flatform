@@ -19,6 +19,10 @@ def board(request):
     return render(request, "board.html", {"boardList" : boardList, "boardCount" : boardCount})
 
 def write(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     return render(request,"write.html")
 
 UPLOAD_DIR = ' / up / '
