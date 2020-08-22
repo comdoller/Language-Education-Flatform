@@ -61,8 +61,53 @@ def add(request, user, dNO):
     qs.arr = str
     qs.save()
 
+    str=str[1:]
+    original_list = str.split('/')
+#    original_list = list(map(int, original_list))
+    erase_duple_list = list(set(original_list))
+    erase_duple_list.sort()
+
+    if dNO in erase_duple_list :
+        print('이미추가한단어') # 나중에 마저 작성,,
+
+#    qs.list = erase_duple_list
+#    qs.save()
+
+    str = ""
+    for s in erase_duple_list :
+        str += "/" + s
+
+    qs.arr = str
+    qs.save()
+
+
     #return redirect('dictionary:showDictionary')
     return HttpResponseNoContent()
+
+
+def erase(request, user, dNO):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
+    qs=myDictionary.objects.get(username=user)
+    str=qs.arr
+    str = str[1:]
+    original_list = str.split('/')
+
+    original_list.remove(dNO)
+    original_list.sort()
+    str = ""
+    for s in original_list :
+        str += "/" + s
+
+    qs.arr = str
+    qs.save()
+
+    q_qs = Dictionary.objects.filter(dNO__in=original_list)
+    return render(request, 'dictionary/mydictionary.html', {"list": q_qs})
+
+    # 현재 페이지 새로고침 추후  ajax로 구현.
 
 
 def mydictionary(request, user):

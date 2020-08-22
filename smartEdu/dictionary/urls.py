@@ -8,5 +8,6 @@ urlpatterns = [
     path('', views.showDictionary, name="showDictionary"),
     path('search', views.search, name="search"),
     path('add/<str:user>/<str:dNO>', views.add, name="add"),
+    path('erase/<str:user>/<str:dNO>', views.erase, name="erase"),
     path('mydictionary/<str:user>', views.mydictionary, name="mydictionary"),
 ]

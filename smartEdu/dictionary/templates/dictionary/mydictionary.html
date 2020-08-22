@@ -38,7 +38,7 @@
         <td>{{s.dBahasa}}</td>
         <td>{{s.dKorea}}</td>
         <td>{{s.dJapan}}</td>
-        <td><a href="#"> ─ </a></td>
+        <td><a href="{%url 'dictionary:erase' user.username s.dNO %}"> ─ </a></td>
     </tr>
 
     {% endfor %}
