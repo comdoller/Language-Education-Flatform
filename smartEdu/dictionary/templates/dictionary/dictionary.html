@@ -44,7 +44,6 @@
     <tr onmouseover="this.style.background='#E6E6FA'" onmouseout="this.style.background='#ffffff'">
         <td>{{s.dNO}}</td>
         <td><a href="{% url 'dictionary:add' user.username s.dNO %}"> ✓ </a></td>
-
         <td>{{s.dTetum}}</td>
         <td>{{s.dEnglish}}</td>
         <td>{{s.dBahasa}}</td>
@@ -79,7 +78,7 @@
 
     <tr onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#ffffff'">
         <td>{{s.dNO}}</td>
-        <td><a href="#"> ✓ </a></td>
+        <td><a href="{% url 'dictionary:add' user.username s.dNO %}"> ✓ </a></td>
         <td>{{s.dTetum}}</td>
         <td>{{s.dEnglish}}</td>
         <td>{{s.dBahasa}}</td>
