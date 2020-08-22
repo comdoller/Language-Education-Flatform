@@ -9,5 +9,4 @@ urlpatterns = [
     path('search', views.search, name="search"),
     path('add/<str:user>/<str:dNO>', views.add, name="add"),
     path('mydictionary/<str:user>', views.mydictionary, name="mydictionary"),
-
 ]

@@ -2,11 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Dictionary
 from .models import myDictionary
 from django.core.paginator import Paginator
-from django.contrib import auth
-
 from django.http import HttpResponse
 
-# Create your views here.
 
 def showDictionary(request):
 
@@ -34,6 +31,25 @@ def search(request):
             'q': q,
         })
 
+
+class HttpResponseNoContent(HttpResponse):
+    """Special HTTP response with no content, just headers.
+
+    The content operations are ignored.
+    """
+
+    def __init__(self, content="", mimetype=None, status=None, content_type=None):
+        super().__init__(status=204)
+
+        if "content-type" in self._headers:
+            del self._headers["content-type"]
+
+    def _set_content(self, value):
+        pass
+
+    def _get_content(self, value):
+        pass
+
 def add(request, user, dNO):
 
     if not request.user.is_authenticated:
@@ -45,7 +61,9 @@ def add(request, user, dNO):
     qs.arr = str
     qs.save()
 
-    return redirect('dictionary:showDictionary')
+    #return redirect('dictionary:showDictionary')
+    return HttpResponseNoContent()
+
 
 def mydictionary(request, user):
 
