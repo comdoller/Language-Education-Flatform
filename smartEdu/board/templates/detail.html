@@ -25,16 +25,23 @@ function del(){
 </head>
 <body>
 	<h4>상세보기 / 수정</h4>
-	<form id="form1" name="form1" method="post" enctype="multipart/form-data">
+	<form id="form1" name="form1" method="post" action="insert" enctype="multipart/form-data">
 	{% csrf_token %}
-		<div class="qna">이름<input type="text" name="writer" size="80"  value="{{dto.writer}}"/></div>
-		<div class="qna">날짜 <h6>{{dto.post_date}}</h6></div>
-		<div class="qna">조회수 <h6>{{dto.hit}}</h6></div>
-		<div class="qna">제목<input type="text" name="writer" size="80"  value="{{dto.title}}"/></div>
-		<label>내용</label><br/>
-			<textarea class="question" cols="80" rows="3">{{dto.content}}</textarea><br/>
+		<!--여기-->
+		이름 <input style="text-align:center; margin:0px auto;" type="text" name="writer" size="80" value="{{dto.writer}}" readonly />
+		<br>
+		날짜 <h4>{{dto.post_date}}</h4>
+		<br>
+		조회수 <h4>{{dto.hit}}</h4>
+		<br>
 
-		<label>첨부파일</label><br/>
+		<!--작성자와 접속자가 같을때-->
+		{% if dto.writer == user.username %}
+		제목 :<input style="text-align:center; margin:0px auto;" type="text" name="title" size="80"  value="{{dto.title}}"/>
+		<br>
+		<label>내용 :</label>
+			<textarea style="text-align:center; margin:0px auto;" class="question" cols="80" rows="3" name="content">{{dto.content}}</textarea><br/>
+		<label>첨부파일</label>
 			<h6>
 			{% if dto.filesize > 0 %}
 			<a href = "download?idx={{dto.idx}}">{{dto.filename}} ({{filesize}}KB)</a>
@@ -42,15 +49,41 @@ function del(){
 			<input type="file" name="file">
 			</h6>
 		<input type="hidden" name="idx" value="{{dto.idx}}"/>
-        <a href="board">
-            <input type="button" value="목록" /></a>
+
+		<a href="board">
+            <input type="button" value="목록" />
+		</a>
+
 		<input type="button" value="수정" onclick="update()"/>
 		<input type="button" value="삭제" onclick="del()"/>
+		{% endif %}
+
+		<!--작성자와 접속자가 다를때-->
+		{% if dto.writer != user.username %}
+		제목 :<div> {{dto.title}} </div>
+		<br>
+		<label>내용 :</label>
+			<div> {{dto.content}} </div><br/>
+		<label>첨부파일</label>
+			<h6>
+			{% if dto.filesize > 0 %}
+			<a href = "download?idx={{dto.idx}}">{{dto.filename}} ({{filesize}}KB)</a>
+			{% endif %}
+			</h6>
+		 <input type="hidden" name="idx" value="{{dto.idx}}"/>
+
+		<a href="board">
+            <input type="button" value="목록" />
+		</a>
+		{% endif %}
 	</form>
+
 	<form method="post" action="reply_insert">
 	{% csrf_token %}
-		댓글작성자<input type="text" name="writer" placeholder="이름" /><br/>
-		<textarea class="question" cols="80" rows="5" placeholder="댓글 내용을 입력하세요"></textarea><br/>
+		댓글작성자
+		<!--여기-->
+		<input style="text-align:center; margin:0px auto;" type="text" name="writer" value="{{ user.username }}" readonly  /><br/>
+		<textarea style="text-align:center; margin:0px auto;" cols="80" rows="5" name="content" placeholder="댓글 내용을 입력하세요"></textarea><br/>
 		<input type="hidden" name="idx" value="{{dto.idx}}"/>
 		<button>댓글쓰기</button>
 	</form>
@@ -59,8 +92,10 @@ function del(){
 	<table border="1" style="width: 700px">
 	{% for row in commentList %}
 	<tr>
-		<td><b>{{row.writer}}</b></td> ({{row.post_date}})<br>
+		<td>
+			<b>{{row.writer}}</b>({{row.post_date}})<br/>
 		{{row.content}}
+		</td>
 	</tr>
 	{% endfor %}
 	</table>

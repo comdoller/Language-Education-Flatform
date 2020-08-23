@@ -25,7 +25,8 @@ def write(request):
 
     return render(request,"write.html")
 
-UPLOAD_DIR = ' / up / '
+##여기##
+UPLOAD_DIR = os.getcwd()
 
 @csrf_exempt
 def insert(request):
@@ -67,9 +68,11 @@ def detail(request):
     dto.hit_up()
     dto.save()
 
+    commentList = Comment.objects.filter(board_idx = id).order_by("idx")
+
     print("filesize : ", dto.filesize)
     filesize = "%.2f" % (dto.filesize / 1024)
-    return render(request, "detail.html", {"dto": dto, "filesize": filesize, })
+    return render(request, "detail.html", {"dto": dto, "filesize": filesize, "commentList":commentList})
 
 
 @csrf_exempt
@@ -89,7 +92,7 @@ def update(request):
 
         fsize = os.path.getsize(UPLOAD_DIR + fname)
 
-    dto_new = Board(idx=id, writer=request.POST["writer"], title=request.POST["title"], content=request.POST["content"],
+    dto_new = Board(idx=id, writer=request.POST["writer"], title=request.POST.get("title",''), content=request.POST.get("content",''),
                     filename=fname, filesize=fsize)
     dto_new.save()
     return redirect("/board")
@@ -100,10 +103,13 @@ def delete(request):
     Board.objects.get(idx = id).delete()
     return redirect("/board")
 
+
+#여기
+
 @csrf_exempt
 def reply_insert(request):
     id = request.POST['idx']
-    dto = Comment(board_idx=id, writer=request.POST["writer"], content=request.POST["content"])
+    dto = Comment(board_idx=id, writer=request.POST.get("writer",''), content=request.POST.get("content",''))
     dto.save()
     return HttpResponseRedirect("detail?idx="+id)
 
