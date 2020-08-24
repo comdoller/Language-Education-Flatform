@@ -13,6 +13,8 @@ class Board(models.Model):
     filename = models.CharField(null=True, default="", max_length=500)
     filesize = models.IntegerField(default=0)
     down = models.IntegerField(default=0)
+    created = models.DateTimeField(default=datetime.now, blank=True)
+    updated = models.DateTimeField(default=datetime.now, blank=True)
 
     def hit_up(self):
         self.hit += 1
