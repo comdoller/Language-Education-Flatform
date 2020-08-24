@@ -15,4 +15,5 @@ urlpatterns = [
     path('update',views.update),
     path('delete',views.delete),
     path('reply_insert',views.reply_insert),
+    path('list',views.list, name="list"),
 ]

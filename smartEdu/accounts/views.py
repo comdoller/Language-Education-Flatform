@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from dictionary.models import myDictionary
+
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 

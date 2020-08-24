@@ -18,6 +18,7 @@ def board(request):
     boardList = Board.objects.all().order_by("-idx")
     return render(request, "board.html", {"boardList" : boardList, "boardCount" : boardCount})
 
+
 def write(request):
 
     if not request.user.is_authenticated:
@@ -112,6 +113,15 @@ def reply_insert(request):
     dto = Comment(board_idx=id, writer=request.POST.get("writer",''), content=request.POST.get("content",''))
     dto.save()
     return HttpResponseRedirect("detail?idx="+id)
+
+def list(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
+    boardCount = Board.objects.count()
+    boardList = Board.objects.all().order_by("-idx")
+    return render(request, "list.html", {"boardList" : boardList, "boardCount" : boardCount})
 
 
 
