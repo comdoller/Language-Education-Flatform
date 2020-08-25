@@ -130,6 +130,7 @@ USE_L10N = True
 
 USE_TZ = True
 # 임시 파일 STATIC/ 사용자 파일 S3용 -KBY_TECH
+#  pip install (boto3 && django-storages)
 # from .secret_key import *
 #
 # AWS_ACCESS_KEY_ID = MY_AWS_ACCESS_KEY_ID
