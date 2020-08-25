@@ -42,7 +42,7 @@ def insert(request):
             fp.write(chunk)
         fp.close()
 
-    dto = Board(writer=request.user.username, title=request.POST["title"], content=request.POST["content"],
+    dto = Board(writer=request.user.username, title=request.POST.get("title",''), content=request.POST["content"],
                 filename=fname, filesize=fsize)
     dto.save()
     print(dto)
