@@ -75,6 +75,15 @@ def detail(request):
     filesize = "%.2f" % (dto.filesize / 1024)
     return render(request, "detail.html", {"dto": dto, "filesize": filesize, "commentList":commentList})
 
+@csrf_exempt
+def modify(request):
+
+    id = request.GET["idx"]
+    dto = Board.objects.get(idx=id)
+
+    filesize = "%.2f" % (dto.filesize / 1024)
+    return render(request, "modify.html", {"dto": dto, "filesize": filesize})
+
 
 @csrf_exempt
 def update(request):
