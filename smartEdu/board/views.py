@@ -42,7 +42,7 @@ def insert(request):
             fp.write(chunk)
         fp.close()
 
-    dto = Board(writer=request.user.username, title=request.POST.get("title",''), content=request.POST.get("content",''),
+    dto = Board(writer=request.user.username, title=request.POST.get("title",''), content=request.POST["content"],
                 filename=fname, filesize=fsize)
     dto.save()
     print(dto)
@@ -83,6 +83,7 @@ def modify(request):
 
     filesize = "%.2f" % (dto.filesize / 1024)
     return render(request, "modify.html", {"dto": dto, "filesize": filesize})
+
 
 
 @csrf_exempt
