@@ -12,8 +12,10 @@ urlpatterns = [
     path('insert',views.insert),
     path('download',views.download),
     path('detail',views.detail),
+    path('modify', views.modify, name='modify'),
     path('update',views.update),
     path('delete',views.delete),
     path('reply_insert',views.reply_insert),
     path('list',views.list, name="list"),
+
 ]

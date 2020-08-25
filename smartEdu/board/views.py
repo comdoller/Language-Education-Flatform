@@ -1,7 +1,8 @@
 import os
 
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
 from django.utils.http import urlquote
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import auth
@@ -42,7 +43,7 @@ def insert(request):
             fp.write(chunk)
         fp.close()
 
-    dto = Board(writer=request.user.username, title=request.POST["title"], content=request.POST["content"],
+    dto = Board(writer=request.user.username, title=request.POST.get("title",''), content=request.POST["content"],
                 filename=fname, filesize=fsize)
     dto.save()
     print(dto)
@@ -75,11 +76,21 @@ def detail(request):
     filesize = "%.2f" % (dto.filesize / 1024)
     return render(request, "detail.html", {"dto": dto, "filesize": filesize, "commentList":commentList})
 
+@csrf_exempt
+def modify(request):
+
+    id = request.GET["idx"]
+    dto = Board.objects.get(idx=id)
+
+    filesize = "%.2f" % (dto.filesize / 1024)
+    return render(request, "modify.html", {"dto": dto, "filesize": filesize})
+
 
 @csrf_exempt
 def update(request):
     id = request.POST['idx']
     dto_src = Board.objects.get(idx=id)
+
     fname = dto_src.filename
     fsize = 0
     if "file" in request.FILES:
@@ -93,7 +104,7 @@ def update(request):
 
         fsize = os.path.getsize(UPLOAD_DIR + fname)
 
-    dto_new = Board(idx=id, writer=request.POST["writer"], title=request.POST.get("title",''), content=request.POST.get("content",''),
+    dto_new = Board(idx=id, writer=request.POST.get("writer",''), title=request.POST.get("title",''), content=request.POST.get("content",''),
                     filename=fname, filesize=fsize)
     dto_new.save()
     return redirect("/board")
@@ -122,6 +133,7 @@ def list(request):
     boardCount = Board.objects.count()
     boardList = Board.objects.all().order_by("-idx")
     return render(request, "list.html", {"boardList" : boardList, "boardCount" : boardCount})
+
 
 
 
