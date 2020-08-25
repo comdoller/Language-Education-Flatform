@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="UTF-8">
 <title>Detail / Update Page</title>
@@ -15,6 +15,12 @@ function update(){
 	document.form1.action="update";
 	document.form1.submit();
 }
+
+function modify(){
+	document.form1.action="modify";
+	document.form1.modify();
+	}
+
 function del(){
 	if(confirm("삭제하시겠습니까?")){
 		document.form1.action = "delete";
@@ -34,32 +40,6 @@ function del(){
 		<br>
 		조회수 <h4>{{dto.hit}}</h4>
 		<br>
-
-		<!--작성자와 접속자가 같을때-->
-		{% if dto.writer == user.username %}
-		제목 :<input style="text-align:center; margin:0px auto;" type="text" name="title" size="80"  value="{{dto.title}}"/>
-		<br>
-		<label>내용 :</label>
-			<textarea style="text-align:center; margin:0px auto;" class="question" cols="80" rows="3" name="content">{{dto.content}}</textarea><br/>
-		<label>첨부파일</label>
-			<h6>
-			{% if dto.filesize > 0 %}
-			<a href = "download?idx={{dto.idx}}">{{dto.filename}} ({{filesize}}KB)</a>
-			{% endif %}
-			<input type="file" name="file">
-			</h6>
-		<input type="hidden" name="idx" value="{{dto.idx}}"/>
-
-		<a href="board">
-            <input type="button" value="목록" />
-		</a>
-
-		<input type="button" value="수정" onclick="update()"/>
-		<input type="button" value="삭제" onclick="del()"/>
-		{% endif %}
-
-		<!--작성자와 접속자가 다를때-->
-		{% if dto.writer != user.username %}
 		제목 :<div> {{dto.title}} </div>
 		<br>
 		<label>내용 :</label>
@@ -75,7 +55,12 @@ function del(){
 		<a href="board">
             <input type="button" value="목록" />
 		</a>
+
+		{% if dto.writer == user.username %}
+		<button> <a href = "modify?idx={{dto.idx}}">수정</a></button>
+		<input type="button" value="삭제" onclick="del()"/>
 		{% endif %}
+
 	</form>
 
 	<form method="post" action="reply_insert">
