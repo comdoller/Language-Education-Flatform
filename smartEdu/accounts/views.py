@@ -64,6 +64,10 @@ def logout(request):
 
 
 def mypage(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     return render(request, "accounts/mypage.html")
 
 
