@@ -8,14 +8,40 @@
 
 
     {% block content %}
-<main id="main">
+<html>
+<h4>MY PAGE</h4>
 
-<h2>mypage</h2>
-    <br>
-    <h3><a href = "{% url 'dictionary:mydictionary' user.username %}"> my dictionary </a> </h3>
-    <br>
-    <h3><a href="{% url 'board:list' %}">my list</a></h3>
+<h4>안녕하세요
+		   <div style="color:#6A5ACD;">{{ user.last_name }} {{ user.first_name }} {{user.username}} 님!
+               <!-- 이후 링크 클릭시 마이페이지 이동 --></div>
+</h4>
 
-</main><!-- End #main -->
+
+    <div class="row">
+          <div class="col-lg-12">
+            <section class="panel">
+
+                <ul class="..." style="padding-left:0px;">
+                  <li class="active">
+                    <a data-toggle="tab" href="{% url 'dictionary:mydictionary' user.username %}">
+                                          <i class="icon-home"></i>
+                                          나의 단어사전
+                                      </a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="{% url 'board:list' %}">
+                                          <i class="icon-user"></i>
+                                          작성글 보기
+                                      </a>
+                  </li>
+
+                </ul>
+
+
+
+            </section>
+          </div>
+    </div>
+</html>
 
     {% endblock %}

@@ -15,15 +15,15 @@
     <body>
     <h4>사전 - 원하는 단어를 검색할 수 있습니다.</h4>
 
-    <h1 style="color:blue;"> <a href = "{% url 'dictionary:mydictionary' user.username %}"> 나의 단어장 </a> {{ account_error }}</h1>
-         <!-- Inline form-->
+
     <div row="" align="center">
         <form action="{% url 'dictionary:search' %}" method="get">
             <input type="text" name="q" value="{{ q }}" required>
             <input type="submit" value="검색">
         </form>
     </div>
-
+ <a class="btn btn-default btn-sm" href="{% url 'dictionary:mydictionary' user.username %}" title="Bootstrap 3 themes generator" style="margin-right:25px; margin-bottom:10px; margin-left:38em;">나의 단어장 </a> {{ account_error }}
+         <!-- Inline form-->
     <div class="dictionary">
     {% if dictionaryAll %}
         <table class="table" style="text-align : center; width : 80%;">
