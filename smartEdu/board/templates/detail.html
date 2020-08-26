@@ -60,7 +60,7 @@ function del(){
 		</a>
 
 		{% if dto.writer == user.username %}
-		<button> <a class="detail_color" href = "modify?idx={{dto.idx}}">수정</a></button>
+		<input type="button" value="수정" onClick="location.href='modify?idx={{dto.idx}}'">
 		<input type="button" value="삭제" onclick="del()"/>
 		{% endif %}
 
