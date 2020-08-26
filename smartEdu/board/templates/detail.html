@@ -73,7 +73,7 @@ function del(){
 
 		<!--여기-->
 		<h6>댓글 작성자 <input style="text-align:center; margin:0px auto;" type="text" name="writer" value="{{ user.username }}" readonly  /></h6>
-		<textarea class ="comment"  placeholder="댓글 내용을 입력하세요"></textarea><br/>
+		<textarea class ="comment" name="content" placeholder="댓글 내용을 입력하세요"></textarea><br/>
 		<input type="hidden" name="idx" value="{{dto.idx}}"/>
 		<button style="margin-bottom:30px;">댓글쓰기</button>
 	</form>
