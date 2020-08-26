@@ -16,6 +16,9 @@ class Board(models.Model):
     created = models.DateTimeField(default=datetime.now, blank=True)
     updated = models.DateTimeField(default=datetime.now, blank=True)
 
+    class Meta:
+        ordering = ['-created', '-updated']
+
     def hit_up(self):
         self.hit += 1
 
