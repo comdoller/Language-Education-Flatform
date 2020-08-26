@@ -350,8 +350,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 }
 
 #hero h1 {
-  margin-left:100px;
-  margin-right:100px;
+
   margin-top:130px;
   margin-bottom:-10px;
   font-size: 70px;

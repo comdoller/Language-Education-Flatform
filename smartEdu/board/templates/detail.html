@@ -34,16 +34,19 @@ function del(){
 	<form id="form1" name="form1" method="post" action="insert" enctype="multipart/form-data">
 	{% csrf_token %}
 		<!--여기-->
-		이름 <input style="text-align:center; margin:0px auto;" type="text" name="writer" size="80" value="{{dto.writer}}" readonly />
+		<h6>이름 <input style="text-align:center; margin:0px auto; margin-left:10px; background-color:#F8F8FF;" type="text" name="writer" size="30" value="{{dto.writer}}" readonly /></h6>
 		<br>
-		날짜 <h4>{{dto.post_date}}</h4>
 		<br>
-		조회수 <h4>{{dto.hit}}</h4>
+		<h6>날짜: {{dto.post_date}}</h6>
+
+		<h6>조회수: {{dto.hit}}</h6>
 		<br>
-		제목 :<div> {{dto.title}} </div>
+
+		<h6>제목 <input style="text-align:center; margin:0px auto; margin-left:10px; background-color:#F8F8FF;" type="text" name="writer" size="30" value="{{dto.title}}" readonly /></h6>
 		<br>
-		<label>내용 :</label>
-			<div> {{dto.content}} </div><br/>
+
+		<h6>내용</h6>
+			<div class="detail_contents"> {{dto.content}} </div><br/>
 		<label>첨부파일</label>
 			<h6>
 			{% if dto.filesize > 0 %}
@@ -57,24 +60,26 @@ function del(){
 		</a>
 
 		{% if dto.writer == user.username %}
-		<button> <a href = "modify?idx={{dto.idx}}">수정</a></button>
+		<button> <a class="detail_color" href = "modify?idx={{dto.idx}}">수정</a></button>
 		<input type="button" value="삭제" onclick="del()"/>
 		{% endif %}
 
 	</form>
+	<br>
+	<br>
 
 	<form method="post" action="reply_insert">
 	{% csrf_token %}
-		댓글작성자
+
 		<!--여기-->
-		<input style="text-align:center; margin:0px auto;" type="text" name="writer" value="{{ user.username }}" readonly  /><br/>
-		<textarea style="text-align:center; margin:0px auto;" cols="80" rows="5" name="content" placeholder="댓글 내용을 입력하세요"></textarea><br/>
+		<h6>댓글 작성자 <input style="text-align:center; margin:0px auto;" type="text" name="writer" value="{{ user.username }}" readonly  /></h6>
+		<textarea class ="comment"  placeholder="댓글 내용을 입력하세요"></textarea><br/>
 		<input type="hidden" name="idx" value="{{dto.idx}}"/>
-		<button>댓글쓰기</button>
+		<button style="margin-bottom:30px;">댓글쓰기</button>
 	</form>
 <!-- 댓글 목록 -->
-<p>댓글 목록</p>
-	<table border="1" style="width: 700px">
+<h6>댓글 목록</h6>
+	<table border="1" style="width: 70%">
 	{% for row in commentList %}
 	<tr>
 		<td>

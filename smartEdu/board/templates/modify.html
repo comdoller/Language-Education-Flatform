@@ -28,11 +28,11 @@ function del(){
 	<form id="form1" name="form1" method="post" action="insert" enctype="multipart/form-data">
 	{% csrf_token %}
 		<!--여기-->
-		이름 <input style="text-align:center; margin:0px auto;" type="text" name="writer" size="80" value="{{dto.writer}}" readonly />
+		이름 <input style="text-align:center; margin:0px auto;" type="text" name="writer" size="30" value="{{dto.writer}}" readonly />
 		<br>
-		날짜 <h4>{{dto.post_date}}</h4>
+		날짜 <h6>{{dto.post_date}}</h6>
 		<br>
-		조회수 <h4>{{dto.hit}}</h4>
+		조회수 <h6>{{dto.hit}}</h6>
 		<br>
 
 		<!--작성자와 접속자가 같을때-->
