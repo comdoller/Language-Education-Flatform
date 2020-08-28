@@ -30,15 +30,14 @@
             </thread>
 
     {% for s in list %}
-
-    <tr onmouseover="this.style.background='#E6E6FA'" onmouseout="this.style.background='#ffffff'">
+    <tr id="databox_{{ s.dNO }}" onmouseover="this.style.background='#E6E6FA'" onmouseout="this.style.background='#ffffff'">
         <td>{{s.dNO}}</td>
         <td>{{s.dTetum}}</td>
         <td>{{s.dEnglish}}</td>
         <td>{{s.dBahasa}}</td>
         <td>{{s.dKorea}}</td>
         <td>{{s.dJapan}}</td>
-        <td><a href="{%url 'dictionary:erase' user.username s.dNO %}"> ─ </a></td>
+        <td><a onclick="Delete('{{ s.dNO }}','{{ user.username }}')" ><button> 삭제 </button> </a></td>
     </tr>
 
     {% endfor %}
@@ -52,4 +51,56 @@
 <br>
 </body>
 </html>
+    {% block scripts %}
+
+<script type="text/javascript">
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+
+    function Delete(dNO,user) {
+
+        var dNO=dNO;
+        var user=user;
+        var xhr;
+        var context = confirm('해당 단어를 삭제하시겠습니까?');
+        if (context==false)
+        {
+            return false;
+        }
+        var strurl="/dictionary/erase/"+user+"/"+dNO;
+
+        xhr = new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+                if (xhr.readyState ==  4)
+               {
+                    xhr.readyState=xhr.responseText;
+                    document.getElementById("databox_"+ dNO ).style.display = "none";
+                    alert(dNO+" 가 지워졌습니다.");
+                    var obj=JSON.parse(data);
+
+                }
+
+            };
+             xhr.open("GET", strurl);
+             xhr.setRequestHeader("X-CSRFToken", csrftoken);
+             xhr.send(null);
+    }
+</script>
+
+    {% endblock %}
 {% endblock %}

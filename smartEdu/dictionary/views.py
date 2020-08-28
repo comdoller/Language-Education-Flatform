@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Dictionary
 from .models import myDictionary
 from django.core.paginator import Paginator
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 
 def showDictionary(request):
@@ -63,7 +63,7 @@ def add(request, user, dNO):
 
     str=str[1:]
     original_list = str.split('/')
-#    original_list = list(map(int, original_list))
+   # original_list = list(map(int, original_list))
     erase_duple_list = list(set(original_list))
     erase_duple_list.sort()
 
@@ -85,8 +85,12 @@ def add(request, user, dNO):
     return HttpResponseNoContent()
 
 
-def erase(request, user, dNO):
 
+# ajax 처리. kby_tech
+def erase(request, user, dNO):
+    # var strurl = "/board_deleteajax?b_no=" + bno;
+    # def board_deleteajax(request):
+    #     bno = request.GET['b_no']
     if not request.user.is_authenticated:
         return redirect('accounts:login')
 
@@ -95,7 +99,8 @@ def erase(request, user, dNO):
     str = str[1:]
     original_list = str.split('/')
 
-    original_list.remove(dNO)
+
+    original_list.remove(dNO) # 해당 아이템 삭제 [실패시 : valueError ]
     original_list.sort()
     str = ""
     for s in original_list :
@@ -104,10 +109,17 @@ def erase(request, user, dNO):
     qs.arr = str
     qs.save()
 
-    q_qs = Dictionary.objects.filter(dNO__in=original_list)
-    return render(request, 'dictionary/mydictionary.html', {"list": q_qs})
 
-    # 현재 페이지 새로고침 추후  ajax로 구현.
+
+    q_qs = Dictionary.objects.filter(dNO__in=original_list)
+    data ={}
+
+    data['result_msg']=" is delete. "
+
+    return JsonResponse(data,content_type="application/json")
+
+
+    # 현재 페이지 새로고침 추후  ajax로 구현. -완성 : 작성자:KBY_TECH
 
 
 def mydictionary(request, user):
