@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'accounts',
     'corsheaders',
     'storages',
-
 ]
 
 MIDDLEWARE = [
@@ -129,8 +128,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
 # 임시 파일 STATIC/ 사용자 파일 S3용 -KBY_TECH
-#  pip install (boto3 && django-storages)
 # from .secret_key import *
 #
 # AWS_ACCESS_KEY_ID = MY_AWS_ACCESS_KEY_ID
@@ -155,9 +154,6 @@ USE_TZ = True
 # MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 #
 # DEFAULT_FILE_STORAGE = 'config.s3media.MediaStorage'
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 ROOT_DIR = os.path.dirname(BASE_DIR)
 

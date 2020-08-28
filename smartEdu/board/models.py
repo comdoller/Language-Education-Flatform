@@ -13,9 +13,9 @@ class Board(models.Model):
     filename = models.CharField(null=True, default="", max_length=500)
     filesize = models.IntegerField(default=0)
     down = models.IntegerField(default=0)
-    #수정 생성 따로 추기
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(default=datetime.now, blank=True)
+    updated = models.DateTimeField(default=datetime.now, blank=True)
+
     class Meta:
         ordering = ['-created', '-updated']
 

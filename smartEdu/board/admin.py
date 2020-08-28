@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+
 from .models import Board
 
 
@@ -8,4 +9,3 @@ class BoardAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Board,BoardAdmin) # 연결하는 방법.
-
