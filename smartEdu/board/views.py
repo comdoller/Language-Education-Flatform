@@ -29,6 +29,7 @@ def write(request):
 ##여기##
 UPLOAD_DIR = os.getcwd()
 
+#
 @csrf_exempt
 def insert(request):
     fname = ""
@@ -48,6 +49,7 @@ def insert(request):
     print(dto)
     return redirect("/board")
 
+#다운로드
 def download(request):
     id = request.GET['idx']
     dto = Board.objects.get(idx = id)
@@ -62,7 +64,7 @@ def download(request):
         dto.save()
         return response
 
-
+#상세보기페이지
 def detail(request):
     id = request.GET["idx"]
     dto = Board.objects.get(idx=id)
@@ -75,6 +77,7 @@ def detail(request):
     filesize = "%.2f" % (dto.filesize / 1024)
     return render(request, "detail.html", {"dto": dto, "filesize": filesize, "commentList":commentList})
 
+#수정페이지
 @csrf_exempt
 def modify(request):
 
@@ -85,7 +88,7 @@ def modify(request):
     return render(request, "modify.html", {"dto": dto, "filesize": filesize})
 
 
-
+#수정
 @csrf_exempt
 def update(request):
     id = request.POST['idx']
@@ -108,6 +111,7 @@ def update(request):
     dto_new.save()
     return redirect("/board")
 
+
 @csrf_exempt
 def delete(request):
     id = request.POST['idx']
@@ -115,14 +119,13 @@ def delete(request):
     return redirect("/board")
 
 
-#여기
-
 @csrf_exempt
 def reply_insert(request):
     id = request.POST['idx']
     dto = Comment(board_idx=id, writer=request.POST.get("writer",''), content=request.POST.get("content",''))
     dto.save()
     return HttpResponseRedirect("detail?idx="+id)
+
 
 def list(request):
 

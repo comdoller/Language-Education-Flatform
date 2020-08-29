@@ -10,7 +10,7 @@ urlpatterns = [
     path('board',views.board),
     path('write',views.write),
     path('insert',views.insert),
-    path('download',views.download),
+    #path('download',views.download),
     path('detail',views.detail),
     path('modify', views.modify, name="modify"),
     path('update',views.update),

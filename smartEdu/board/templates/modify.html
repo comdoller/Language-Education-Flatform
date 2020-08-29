@@ -43,13 +43,13 @@ function del(){
 
 		<h6>내용</h6>
 			<textarea style="text-align:center; margin:0px auto;" class="question" cols="80" rows="3" name="content">{{dto.content}}</textarea><br/>
-		<label>첨부파일</label>
+		<!--<label>첨부파일</label>
 			<h6>
 			{% if dto.filesize > 0 %}
 			<a href = "download?idx={{dto.idx}}">{{dto.filename}} ({{filesize}}KB)</a>
 			{% endif %}
 			<input type="file" name="file">
-			</h6>
+			</h6>-->
 		<input type="hidden" name="idx" value="{{dto.idx}}"/>
 
 		<a href="board">

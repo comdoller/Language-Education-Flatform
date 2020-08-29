@@ -16,8 +16,8 @@
 		<td>제목</td>
 		<td>날짜</td>
 		<td>조회수</td>
-		<td>첨부파일</td>
-		<td>다운로드수</td>
+		<!--<td>첨부파일</td>
+		<td>다운로드수</td>-->
 	</tr>
 
 	{% for row in boardList %}
@@ -28,11 +28,11 @@
 		<td><a href = "detail?idx={{row.idx}}">{{row.title}}</a></td>
 		<td>{{row.post_date|date:"Y-m-d"}}</td>
 		<td>{{row.hit}}</td>
-		<td>{% if row.filesize > 0 %} <a href = "download?idx={{row.idx}}">
+		<!--<td>{% if row.filesize > 0 %} <a href = "download?idx={{row.idx}}">
 			<img src = "{% static 'images/file.gif' %}"></a>
 			{% endif %}
 		</td>
-		<td>{{row.down}}</td>
+		<td>{{row.down}}</td>-->
 	</tr>
     {% endif %}
 	{% endfor %}
