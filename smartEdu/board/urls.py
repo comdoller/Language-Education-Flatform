@@ -17,4 +17,8 @@ urlpatterns = [
     path('delete',views.delete),
     path('reply_insert',views.reply_insert),
     path('list',views.list, name="list"),
+    path('my_update', views.my_update),
+    path('my_modify',views.my_modify),
+    path('my_detail',views.my_detail),
+    path('my_delete', views.my_delete),
 ]

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="UTF-8">
+<title>Detail / Update Page</title>
+<script>
+function home(){
+	location.href="/";
+}
+
+function modify(){
+	document.form1.action="my_modify";
+	document.form1.my_modify();
+	}
+
+function del(){
+	if(confirm("삭제하시겠습니까?")){
+		document.form1.action = "my_delete";
+		document.form1.submit();
+	}
+}
+</script>
+</head>
+<body>
+	<h4>상세보기 / 수정</h4>
+	<form id="form1" name="form1" method="post" action="insert" enctype="multipart/form-data">
+	{% csrf_token %}
+		<!--여기-->
+		<h6>이름 <input style="text-align:center; margin:0px auto; margin-left:10px; background-color:#F8F8FF;" type="text" name="writer" size="30" value="{{dto.writer}}" readonly /></h6>
+		<br>
+		<br>
+		<h6>날짜: {{dto.post_date}}</h6>
+
+		<h6>조회수: {{dto.hit}}</h6>
+		<br>
+
+		<h6>제목 <input style="text-align:center; margin:0px auto; margin-left:10px; background-color:#F8F8FF;" type="text" name="writer" size="30" value="{{dto.title}}" readonly /></h6>
+		<br>
+
+		<h6>내용</h6>
+			<div class="detail_contents"> {{dto.content}} </div><br/>
+		<!--<label>첨부파일</label>
+			<h6>
+			{% if dto.filesize > 0 %}
+			<a href = "download?idx={{dto.idx}}">{{dto.filename}} ({{filesize}}KB)</a>
+			{% endif %}
+			</h6>-->
+		 <input type="hidden" name="idx" value="{{dto.idx}}"/>
+
+		<a href="list">
+            <input type="button" value="목록" />
+		</a>
+
+		{% if dto.writer == user.username %}
+		<input type="button" value="수정" onClick="location.href='my_modify?idx={{dto.idx}}'">
+		<input type="button" value="삭제" onclick="del()"/>
+		{% endif %}
+
+	</form>
+	<br>
+	<br>
+
+	<form method="post" action="reply_insert">
+	{% csrf_token %}
+
+		<!--여기-->
+		<h6>댓글 작성자 <input style="text-align:center; margin:0px auto;" type="text" name="writer" value="{{ user.username }}" readonly  /></h6>
+		<textarea class ="comment" name="content" placeholder="댓글 내용을 입력하세요"></textarea><br/>
+		<input type="hidden" name="idx" value="{{dto.idx}}"/>
+		<button style="margin-bottom:30px;">댓글쓰기</button>
+	</form>
+
+<!-- 댓글 목록 -->
+<h6>댓글 목록</h6>
+	<table border="1" style="width: 70%">
+	{% for row in commentList %}
+	<tr>
+		<td>
+			<b>{{row.writer}}</b>({{row.post_date}})<br/>
+		{{row.content}}
+		</td>
+	</tr>
+	{% endfor %}
+	</table>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,7 +1,7 @@
 import os
 
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.http import urlquote
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import auth
@@ -127,6 +127,7 @@ def reply_insert(request):
     return HttpResponseRedirect("detail?idx="+id)
 
 
+##################내 list 부분 ########################
 def list(request):
 
     if not request.user.is_authenticated:
@@ -135,6 +136,65 @@ def list(request):
     boardCount = Board.objects.count()
     boardList = Board.objects.all().order_by("-idx")
     return render(request, "list.html", {"boardList" : boardList, "boardCount" : boardCount})
+
+#나의 수정
+@csrf_exempt
+def my_update(request):
+    id = request.POST['idx']
+    dto_src = Board.objects.get(idx=id)
+    fname = dto_src.filename
+    fsize = 0
+    if "file" in request.FILES:
+        file = request.FILES["file"]
+        fname = file.name
+        # fsize = file.size
+        fp = open("%s%s" % (UPLOAD_DIR, fname), "wb")
+        for chunk in file.chunks():
+            fp.write(chunk)
+        fp.close()
+
+        fsize = os.path.getsize(UPLOAD_DIR + fname)
+
+    dto_new = Board(idx=id, writer=request.POST["writer"], title=request.POST.get("title",''), content=request.POST.get("content",''),
+                    filename=fname, filesize=fsize)
+    dto_new.save()
+
+    boardCount = Board.objects.count()
+    boardList = Board.objects.all().order_by("-idx")
+    return render(request, "list.html", {"boardList": boardList, "boardCount": boardCount})
+
+#나의_수정페이지
+@csrf_exempt
+def my_modify(request):
+    id = request.GET["idx"]
+    dto = Board.objects.get(idx=id)
+
+    filesize = "%.2f" % (dto.filesize / 1024)
+    return render(request, "my_modify.html", {"dto": dto, "filesize": filesize})
+
+#나의_상세보기페이지
+def my_detail(request):
+    id = request.GET["idx"]
+    dto = Board.objects.get(idx=id)
+    dto.hit_up()
+    dto.save()
+
+    commentList = Comment.objects.filter(board_idx = id).order_by("idx")
+
+    print("filesize : ", dto.filesize)
+    filesize = "%.2f" % (dto.filesize / 1024)
+    return render(request, "my_detail.html", {"dto": dto, "filesize": filesize, "commentList":commentList})
+
+@csrf_exempt
+def my_delete(request):
+    id = request.POST['idx']
+    Board.objects.get(idx = id).delete()
+
+    boardCount = Board.objects.count()
+    boardList = Board.objects.all().order_by("-idx")
+    return render(request, "list.html", {"boardList": boardList, "boardCount": boardCount})
+
+
 
 
 
