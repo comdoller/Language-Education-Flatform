@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<body>
+<h4>빈 칸에 정답을 입력해 주세요.</h4>
+
+<br>
+<br>
+<form action="{% url 'dTest:result' %}" method="get">
+    <table class="table" style="text-align : center; width : 80%;">
+        <thread>
+            <tr style="border-bottom: 2px solid #9400D3;">
+                <td>{{testR}}</td>
+                {% for i in exR %}
+                <td>{{i}}</td>
+                {% endfor %}
+            </tr>
+        </thread>
+
+
+        {% for word in testQS%}
+        <tr onmouseover="this.style.background='#E6E6FA'" onmouseout="this.style.background='#ffffff'">
+            <td><input type="text" name="answer"></td>
+            {% for exWord in exR %}
+            {% if exWord == "테툼어" %}
+             <td>{{word.dTetum}}</td>
+            {% endif %}
+            {% if exWord == "영어" %}
+             <td>{{word.dEnglish}}</td>
+            {% endif %}
+            {% if exWord == "바하사" %}
+             <td>{{word.dBahasa}}</td>
+            {% endif %}
+            {% if exWord == "한국어" %}
+             <td>{{word.dKorea}}</td>
+            {% endif %}
+            {% if exWord == "일어" %}
+             <td>{{word.dJapan}}</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="제출">
+</form>
+
+<!-- <p>'{{ q }}' not found </p> -->
+
+
+</body>
+</html>
+{% endblock %}
