@@ -21,4 +21,5 @@ urlpatterns = [
     path('my_modify',views.my_modify),
     path('my_detail',views.my_detail),
     path('my_delete', views.my_delete),
+    path('my_reply_insert', views.my_reply_insert),
 ]

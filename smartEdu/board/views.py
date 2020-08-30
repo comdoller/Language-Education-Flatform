@@ -32,6 +32,10 @@ UPLOAD_DIR = os.getcwd()
 #
 @csrf_exempt
 def insert(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     fname = ""
     fsize = 0
     if "file" in request.FILES:
@@ -66,6 +70,10 @@ def download(request):
 
 #상세보기페이지
 def detail(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.GET["idx"]
     dto = Board.objects.get(idx=id)
     dto.hit_up()
@@ -81,6 +89,9 @@ def detail(request):
 @csrf_exempt
 def modify(request):
 
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.GET["idx"]
     dto = Board.objects.get(idx=id)
 
@@ -91,6 +102,10 @@ def modify(request):
 #수정
 @csrf_exempt
 def update(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.POST['idx']
     dto_src = Board.objects.get(idx=id)
     fname = dto_src.filename
@@ -114,6 +129,10 @@ def update(request):
 
 @csrf_exempt
 def delete(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.POST['idx']
     Board.objects.get(idx = id).delete()
     return redirect("/board")
@@ -121,6 +140,10 @@ def delete(request):
 
 @csrf_exempt
 def reply_insert(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.POST['idx']
     dto = Comment(board_idx=id, writer=request.POST.get("writer",''), content=request.POST.get("content",''))
     dto.save()
@@ -140,6 +163,10 @@ def list(request):
 #나의 수정
 @csrf_exempt
 def my_update(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.POST['idx']
     dto_src = Board.objects.get(idx=id)
     fname = dto_src.filename
@@ -166,6 +193,10 @@ def my_update(request):
 #나의_수정페이지
 @csrf_exempt
 def my_modify(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.GET["idx"]
     dto = Board.objects.get(idx=id)
 
@@ -174,6 +205,10 @@ def my_modify(request):
 
 #나의_상세보기페이지
 def my_detail(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.GET["idx"]
     dto = Board.objects.get(idx=id)
     dto.hit_up()
@@ -187,12 +222,27 @@ def my_detail(request):
 
 @csrf_exempt
 def my_delete(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
     id = request.POST['idx']
     Board.objects.get(idx = id).delete()
 
     boardCount = Board.objects.count()
     boardList = Board.objects.all().order_by("-idx")
     return render(request, "list.html", {"boardList": boardList, "boardCount": boardCount})
+
+@csrf_exempt
+def my_reply_insert(request):
+
+    if not request.user.is_authenticated:
+        return redirect('accounts:login')
+
+    id = request.POST['idx']
+    dto = Comment(board_idx=id, writer=request.POST.get("writer",''), content=request.POST.get("content",''))
+    dto.save()
+    return HttpResponseRedirect("my_detail?idx="+id)
 
 
 
