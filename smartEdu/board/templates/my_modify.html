@@ -12,15 +12,10 @@ function home(){
 	location.href="/";
 }
 function update(){
-	document.form1.action="update";
+	document.form1.action="my_update";
 	document.form1.submit();
 }
-function del(){
-	if(confirm("삭제하시겠습니까?")){
-		document.form1.action = "delete";
-		document.form1.submit();
-	}
-}
+
 </script>
 </head>
 <body>
@@ -52,7 +47,7 @@ function del(){
 			</h6>-->
 		<input type="hidden" name="idx" value="{{dto.idx}}"/>
 
-		<a href="board">
+		<a href="list">
             <input type="button" value="목록" />
 		</a>
 

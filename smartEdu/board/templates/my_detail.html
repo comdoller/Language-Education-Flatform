@@ -11,19 +11,15 @@
 function home(){
 	location.href="/";
 }
-function update(){
-	document.form1.action="update";
-	document.form1.submit();
-}
 
 function modify(){
-	document.form1.action="modify";
-	document.form1.modify();
+	document.form1.action="my_modify";
+	document.form1.my_modify();
 	}
 
 function del(){
 	if(confirm("삭제하시겠습니까?")){
-		document.form1.action = "delete";
+		document.form1.action = "my_delete";
 		document.form1.submit();
 	}
 }
@@ -55,12 +51,12 @@ function del(){
 			</h6>-->
 		 <input type="hidden" name="idx" value="{{dto.idx}}"/>
 
-		<a href="board">
+		<a href="list">
             <input type="button" value="목록" />
 		</a>
 
 		{% if dto.writer == user.username %}
-		<input type="button" value="수정" onClick="location.href='modify?idx={{dto.idx}}'">
+		<input type="button" value="수정" onClick="location.href='my_modify?idx={{dto.idx}}'">
 		<input type="button" value="삭제" onclick="del()"/>
 		{% endif %}
 
@@ -68,7 +64,7 @@ function del(){
 	<br>
 	<br>
 
-	<form method="post" action="reply_insert">
+	<form method="post" action="my_reply_insert">
 	{% csrf_token %}
 
 		<!--여기-->

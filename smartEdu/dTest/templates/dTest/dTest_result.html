@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html>
+<body>
+<h4>{{score}} 개 맞았습니다.</h4>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class ="col-6">
+            <table style="margin-left: auto; margin-right: auto;">
+                <thread>
+                    <tr style="border-bottom: 2px solid #9400D3;">
+                        <td>내가쓴 답</td>
+                    </tr>
+                </thread>
+                {%  for answer in answer_list %}
+                <tr onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#ffffff'">
+                    {% if answer %}
+                    <td>{{answer}}</td>
+                    {% else %}
+                    <td>X</td>
+                    {% endif %}
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-6">
+
+            <table style="margin-left: auto; margin-right: auto;">
+                <thread>
+                    <tr style="border-bottom: 2px solid #9400D3;">
+                        <td>정답</td>
+                        <td>단어추가</td>
+                    </tr>
+                </thread>
+                {%  for word in testQS %}
+                <tr onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#ffffff'">
+
+                    {% if testR == "테툼어" %}
+                    <td>{{word.dTetum}}</td>
+                    {% endif %}
+                    {% if testR == "영어" %}
+                    <td>{{word.dEnglish}}</td>
+                    {% endif %}
+                    {% if testR == "바하사" %}
+                    <td>{{word.dBahasa}}</td>
+                    {% endif %}
+                    {% if testR == "한국어" %}
+                    <td>{{word.dKorea}}</td>
+                    {% endif %}
+                    {% if testR == "일어" %}
+                    <td>{{word.dJapan}}</td>
+                    {% endif %}
+
+                    <td><a href="{% url 'dictionary:add' user.username word.dNO %}"> ✓ </a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+<form action="{% url 'home:home' %}" method="get">
+    <input type="submit" value="메인으로">
+</form>
+</body>
+</html>
+{% endblock %}
