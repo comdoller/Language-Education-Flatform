@@ -13,14 +13,14 @@
          <!-- Inline form-->
     <div row="" align="center">
         <form action="{% url 'dTest:dTest' %}" method="get">
-            <div>시험 볼 언어</div>
-                <input type="radio" name="testR" value="테툼어" checked/> 테툼어
+            <div class="dtest">시험 볼 언어</div>
+            <input type="radio" name="testR" value="테툼어" checked /> 테툼어
                 <input type="radio" name="testR" value="영어"/> 영어
                 <input type="radio" name="testR" value="바하사"/> 바하사
                 <input type="radio" name="testR" value="한국어"/> 한국어
                 <input type="radio" name="testR" value="일어"/> 일어
 
-            <div>보기 언어</div>
+            <div class="dtest" style="margin-top:15px;">보기 언어</div>
                 <input type="checkbox" name="exR" value="테툼어"/> 테툼어
                 <input type="checkbox" name="exR" value="영어"/> 영어
                 <input type="checkbox" name="exR" value="바하사"/> 바하사
@@ -28,7 +28,7 @@
                 <input type="checkbox" name="exR" value="일어"/> 일어
             <br>
             <p style="color:red"> {{ error }} {{ empty_error }}</p>
-            <input type="submit" value="시험보기"/>
+            <input type="submit" style="margin-bottom:40px;" value="시험보기"/>
         </form>
     
     </div>
